@@ -9,8 +9,12 @@ keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- saving
 keymap.set("n", "<C-s>", ":w<CR>")
-keymap.set("v", "<C-s>", "<Esc>:w<CR>gv")
+keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 keymap.set("i", "<C-s>", "<Esc>:w<CR>gi")
+
+-- quitting
+keymap.set({ "n", "i", "v" }, "<C-d>", "<Esc>:q<CR>")
+keymap.set({ "n", "i", "v" }, "<C-D>", "<Esc>:q!<CR>")
 
 -- moving lines up and down
 keymap.set("n", "<A-e>", ":m +1<CR>==")
@@ -38,6 +42,10 @@ keymap.set("n", "<leader>tk", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<F1>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<F3>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+-- LSP
+keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
+keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
 
 -- TODO: based on language or find a plugin
 -- keymap.set("n", "<leader>to", "o--TODO: ", { desc = "TODO comment snippet" })

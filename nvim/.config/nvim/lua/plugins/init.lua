@@ -8,15 +8,15 @@ return {
         end
     },
     {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {}
     },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        enabled = true,
-        event = {'BufReadPre', 'BufNewFile'},
-        main = 'ibl',
+        "lukas-reineke/indent-blankline.nvim",
+        enabled = false,
+        event = {"BufReadPre", "BufNewFile"},
+        main = "ibl",
         opts = {
             indent = {
                 char = "|"
@@ -24,7 +24,7 @@ return {
         }
     },
     {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         opts = {
             toggler = {
                 line = "CC",

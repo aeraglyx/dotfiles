@@ -10,7 +10,7 @@ vim.opt.cindent = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.wrap = true
 
 vim.opt.cursorline = true
@@ -24,5 +24,5 @@ vim.opt.smartcase = true
 vim.g.have_nerd_font = false
 
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.opt.clipboard = "unnamedplus"
 end)
