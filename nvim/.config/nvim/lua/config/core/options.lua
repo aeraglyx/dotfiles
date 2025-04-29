@@ -24,5 +24,12 @@ vim.opt.smartcase = true
 vim.g.have_nerd_font = false
 
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+    vim.opt.clipboard = "unnamedplus"
 end)
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        vim.opt.formatoptions:remove { "c", "r", "o" }
+    end,
+    desc = "Disable New Line Comment",
+})
