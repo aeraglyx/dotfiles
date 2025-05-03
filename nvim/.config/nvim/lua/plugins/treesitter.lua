@@ -23,6 +23,7 @@ return {
                 "toml",
                 "yaml",
                 "nix",
+                "hyprlang",
             },
             auto_install = true,
             highlight = {
