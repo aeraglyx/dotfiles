@@ -4,8 +4,7 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 12, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "spacing": 15, // Gaps between modules (4px)
     "modules-left": [
         "hyprland/workspaces"
         // "hyprland/window"
@@ -30,7 +29,8 @@
         // "battery",
         // "battery#bat2",
         // "clock",
-        "tray",
+        // TODO: tray
+        // "tray",
         "custom/power"
     ],
     "hyprland/workspaces": {
@@ -39,11 +39,16 @@
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
-            // "1": "",
+            "1": "",
+            // "1": "",
             // "2": "",
+            "2": "󰈹",
             // "3": "",
+            "4": "",
             // "4": "",
             // "5": "",
+            "5": "󱩛",
+            // "5": "󰍹",
             "urgent": "",
             "focused": "",
             "default": ""

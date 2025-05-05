@@ -33,8 +33,8 @@
 }
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.9);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    background-color: rgba(30, 30, 46, 0.95);
+    border-bottom: 3px solid @surface0;
     color: @text;
     transition-property: background-color;
     transition-duration: .5s;
@@ -64,35 +64,36 @@ tooltip label {
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    /* box-shadow: inset 0 -3px transparent; */
     /* Avoid rounded borders under each button name */
+    /* box-shadow: none; */
     border: none;
     border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: @surface0;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-/* #pulseaudio:hover { */
-/*     background-color: #313244; */
+/* button:hover { */
+/*     background: @surface0; */
+/*     box-shadow: inset 0 -3px #ffffff; */
 /* } */
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @overlay0;
+    padding: 0 20px;
+    background: transparent;
+    border: none;
+    color: @text;
 }
 
-/* #workspaces button:empty { */
-/*     color: @overlay0; */
-/* } */
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-color: @surface0;
+}
 
 #workspaces button.active {
+    background-color: @surface0;
     color: @text;
+    box-shadow: inset 0 -3px @sapphire;
 }
 
 #workspaces button.urgent {
@@ -220,8 +221,7 @@ label:focus {
 /* } */
 
 #pulseaudio.muted {
-    /* background-color: #90b1b1; */
-    color: #f38ba8;
+    color: @red;
 }
 
 #wireplumber {
