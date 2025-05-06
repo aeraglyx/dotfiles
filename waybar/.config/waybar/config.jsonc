@@ -2,9 +2,10 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
+    "height": 35, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 15, // Gaps between modules (4px)
+    "spacing": 10, // Gaps between modules (4px)
+    "margin": "10 10 0 10",
     "modules-left": [
         "hyprland/workspaces"
         // "hyprland/window"
@@ -19,9 +20,11 @@
         "pulseaudio",
         // "network",
         // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "disk",
+        "group/hardware"
+        // "cpu",
+        // "memory",
+        // "disk"
+
         // "temperature",
         // "backlight",
         // "keyboard-state",
@@ -31,13 +34,14 @@
         // "clock",
         // TODO: tray
         // "tray",
-        "custom/power"
+        // "custom/power"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}: {icon}",
+        // "format": "{name}: {icon}",
+        "format": "{icon}",
         "format-icons": {
             "1": "",
             // "1": "",
@@ -106,19 +110,28 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        // "format": "{:%H:%M | %d.%m.%Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d.%m.%Y}"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ]
     },
     "cpu": {
-        "format": "{usage}%  ",
+        "format": "  {usage}%",
         "interval": 10
     },
     "memory": {
-        "format": "{percentage}%  ",
+        "format": "  {percentage}%",
         "interval": 10
     },
     "disk": {
-        "format": "{percentage_used}%  ",
+        "format": "  {percentage_used}%",
         "interval": 60,
         "path": "/"
     },
@@ -176,14 +189,15 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         // "format": "{volume}% {icon} {format_source}",
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": "",
+            // "headphone": "",
             "hands-free": "",
             "headset": "",
             "phone": "",
