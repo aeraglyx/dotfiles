@@ -59,10 +59,10 @@ window#waybar.solo {
 tooltip {
     background: @base;
     border: 2px solid @surface0;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 tooltip label {
-    color: inherit;
+    color: @text;
 }
 
 button {
@@ -79,6 +79,7 @@ button {
 #workspaces button,
 #clock,
 #pulseaudio,
+#custom-spotify,
 #hardware {
     /* padding: 0 20px; */
     background: @base;
@@ -92,6 +93,10 @@ button {
     margin-right: 10px;
     padding: 0 20px 0 15px;
     transition: none;
+}
+
+#workspaces button:last-child {
+    margin-right: 0px;
 }
 
 #workspaces button:hover {
@@ -122,6 +127,7 @@ button {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-spotify,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -131,6 +137,10 @@ button {
     padding: 0px 15px;
     color: inherit;
 }
+
+/* #custom-spotify { */
+/*     color: @green; */
+/* } */
 
 /* #window, */
 /* #workspaces { */

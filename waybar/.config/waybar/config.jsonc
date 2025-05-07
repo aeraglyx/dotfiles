@@ -7,7 +7,8 @@
     "spacing": 10, // Gaps between modules (4px)
     "margin": "10 10 0 10",
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/spotify"
         // "hyprland/window"
     ],
     "modules-center": [
@@ -51,12 +52,21 @@
             "4": "",
             // "4": "",
             // "5": "",
-            "5": "󱩛",
-            // "5": "󰍹",
+            "5": "",
+            // "5": "",
             "urgent": "",
             "focused": "",
             "default": ""
         }
+    },
+    "custom/spotify": {
+        "format": "  {}",
+        "tooltip": false,
+        // "exec": "playerctl --player=spotify metadata --format '{{ artist }} | {{ title }}'",
+        "exec": "python ~/.config/waybar/scripts/song_info.py",
+        "interval": 1,
+        // "on-click": "playerctl --player=spotify play-pause"
+        "on-click": "hyprctl dispatch workspace 4"
     },
     "keyboard-state": {
         "numlock": true,
