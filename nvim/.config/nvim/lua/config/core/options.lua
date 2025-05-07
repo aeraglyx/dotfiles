@@ -8,10 +8,11 @@ vim.opt.smartindent = true
 vim.opt.cindent = true
 
 vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 10
+vim.opt.relativenumber = false
+vim.opt.scrolloff = 8
 vim.opt.inccommand = "split"
 vim.opt.wrap = true
+vim.opt.signcolumn = "yes:1"
 
 vim.opt.cursorline = true
 
