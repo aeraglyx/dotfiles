@@ -24,6 +24,7 @@ return {
                 "yaml",
                 "nix",
                 "hyprlang",
+                "rasi",
             },
             auto_install = true,
             highlight = {
