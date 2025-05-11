@@ -30,6 +30,7 @@
     font-family: "Fira Code Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 15px;
+    min-height: 10px;
 }
 
 window#waybar {
@@ -57,9 +58,11 @@ window#waybar.solo {
 */
 
 tooltip {
-    background: @base;
-    border: 2px solid @surface0;
-    border-radius: 12px;
+    background: @surface0;
+    /* background: rgba(30, 30, 46, 0.9); */
+    /* border: 2px solid @surface0; */
+    border: none;
+    border-radius: 8px;
 }
 tooltip label {
     color: @text;
@@ -76,40 +79,47 @@ button {
     color: inherit;
 }
 
-#workspaces button,
+#workspaces,
 #clock,
 #pulseaudio,
 #custom-spotify,
 #hardware {
-    /* padding: 0 20px; */
-    background: @base;
-    border: 2px solid @surface0;
-    border-radius: 12px;
+    /* background: @base; */
+    background: rgba(30, 30, 46, 0.9);
+    /* border: 2px solid @surface0; */
+    border-radius: 16px;
 }
 
 #workspaces button {
-    /* background: @base; */
-    /* color: @text; */
-    margin-right: 10px;
-    padding: 0 20px 0 15px;
+    background: transparent;
+    color: @text;
+    padding: 0 13px 0 11px;
+    margin: 5px;
+    border: none;
+    border-radius: 11px;
     transition: none;
 }
 
-#workspaces button:last-child {
+/* #workspaces button:first-child { */
+    /* border-radius: 16px 6px 6px 16px; */
+/* } */
+
+#workspaces button:not(:last-child) {
     margin-right: 0px;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    /* background: @overlay0; */
-    border: 2px solid @overlay0;
+    background: @surface1;
+    /* border: 2px solid @overlay0; */
 }
 
 #workspaces button.active {
-    background: @surface0;
-    color: @text;
-    border: 2px solid @text;
+    /* background: @surface0; */
+    /* color: @text; */
+    background: @text;
+    color: @base;
 }
 
 #workspaces button.urgent {
@@ -134,8 +144,15 @@ button {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0px 15px;
+    padding: 0px 14px;
     color: inherit;
+}
+
+#custom-os {
+    /* color: @base; */
+    font-size: 25px;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
 /* #custom-spotify { */
@@ -157,35 +174,8 @@ button {
     /* margin-right: 10px; */
 }
 
-/* #clock { */
-/*     background-color: #64727D; */
-/* } */
-
-/* #battery { */
-/*     background-color: #ffffff; */
-/*     color: #000000; */
-/* } */
-
 #battery.charging, #battery.plugged {
     color: @green;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 #power-profiles-daemon {

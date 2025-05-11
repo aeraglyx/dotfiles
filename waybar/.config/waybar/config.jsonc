@@ -2,11 +2,12 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 10, // Gaps between modules (4px)
     "margin": "10 10 0 10",
     "modules-left": [
+        "custom/os",
         "hyprland/workspaces",
         "custom/spotify"
         // "hyprland/window"
@@ -37,6 +38,10 @@
         // "tray",
         // "custom/power"
     ],
+    "custom/os": {
+        "format": "",
+        "tooltip-format": "btw"
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -51,8 +56,8 @@
             // "3": "",
             "4": "",
             // "4": "",
-            // "5": "",
-            "5": "",
+            "5": "",
+            "6": "",
             // "5": "",
             "urgent": "",
             "focused": "",
@@ -134,15 +139,15 @@
     },
     "cpu": {
         "format": "  {usage}%",
-        "interval": 10
+        "interval": 5
     },
     "memory": {
         "format": "  {percentage}%",
-        "interval": 10
+        "interval": 5
     },
     "disk": {
         "format": "  {percentage_used}%",
-        "interval": 60,
+        "interval": 30,
         "path": "/"
     },
     "temperature": {
