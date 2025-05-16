@@ -12,19 +12,29 @@ return {
 
         config = function()
             local telescope = require("telescope")
+            local actions = require("telescope.actions")
+            local builtin = require("telescope.builtin")
+
             telescope.setup({
-                extensions_list = { "fzf" }
+                defaults = {
+                    mappings = {
+                        i = {
+                            ["<esc>"] = actions.close
+                        },
+                    },
+                },
+                pickers = {
+                    find_files = {
+                        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+                    },
+                },
+                extensions_list = { "fzf" },
             })
 
             -- telescope.load_extension("fzf")
 
-            local builtin = require("telescope.builtin")
-
             local find_dotfiles = function()
-                builtin.find_files({
-                    cwd = "~/dotfiles",
-                    find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' }
-                })
+                builtin.find_files({ cwd = "~/dotfiles" })
             end
 
             local find_nvim_files = function()
