@@ -26,7 +26,6 @@
 @define-color crust #11111b;
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Fira Code Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -43,19 +42,6 @@ window#waybar {
     /* transitionduration: .5s; */
     /* border-radius: 16px; */
 }
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 tooltip {
     background: @surface0;
@@ -80,35 +66,39 @@ button {
 }
 
 #workspaces,
+#taskbar,
+#window,
 #clock,
 #pulseaudio,
 #custom-spotify,
+#custom-nightlight,
+#custom-vpn,
 #hardware {
     /* background: @base; */
     background: rgba(30, 30, 46, 0.9);
     /* background: transparent; */
     /* border: 2px solid @surface0; */
-    border-radius: 10px;
+    border-radius: 9px;
 }
 
+#taskbar button,
 #workspaces button {
     background: transparent;
     color: @text;
-    padding: 0 13px 0 11px;
+    padding: 0 8px;
     margin: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: none;
+    padding-top: 1px;
 }
 
-/* #workspaces button:first-child { */
-    /* border-radius: 16px 6px 6px 16px; */
-/* } */
-
+#taskbar button:not(:last-child),
 #workspaces button:not(:last-child) {
     margin-right: 0px;
 }
 
+#taskbar button:hover,
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
@@ -116,17 +106,21 @@ button {
     /* border: 2px solid @overlay0; */
 }
 
+/* #taskbar button.active, */
 #workspaces button.active {
-    /* background: @surface0; */
-    /* color: @text; */
     background: @text;
     color: @base;
+}
+
+#taskbar button.active {
+    background: @surface1;
 }
 
 #workspaces button.urgent {
     color: @red;
 }
 
+#window,
 #clock,
 #battery,
 #cpu,
@@ -139,6 +133,8 @@ button {
 #wireplumber,
 #custom-media,
 #custom-spotify,
+#custom-nightlight,
+#custom-vpn,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -162,19 +158,21 @@ button {
     color: @green;
 }
 
-/* #window, */
-/* #workspaces { */
-/*     margin: 0 4px; */
-/* } */
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    /* margin-left: 10px; */
+#custom-nightlight.warm {
+    color: @rosewater;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    /* margin-right: 10px; */
+#custom-vpn {
+    color: @blue;
+}
+
+#custom-vpn:not(.connected) {
+    background: @red;
+    color: @base;
+}
+
+#clock {
+    color: @mauve;
 }
 
 #battery.charging, #battery.plugged {

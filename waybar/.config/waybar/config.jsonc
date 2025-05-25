@@ -2,40 +2,41 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 31, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 12, // Gaps between modules (4px)
+    "height": 30,
+    "spacing": 10,
     "margin": "12 12 0 12",
     "modules-left": [
         "custom/os",
         "hyprland/workspaces",
-        "custom/spotify"
+        "wlr/taskbar",
         // "hyprland/window"
+        "custom/spotify"
     ],
     "modules-center": [
-        // "hyprland/window"
-        "clock"
+        "hyprland/window"
+        // "clock"
     ],
     "modules-right": [
-        "mpd",
+        // "mpd",
         // "idle_inhibitor",
+        // "custom/spotify",
+        // "tray",
         "pulseaudio",
+        "custom/nightlight",
+        "custom/vpn",
         // "network",
         // "power-profiles-daemon",
-        "group/hardware"
+        "group/hardware",
+        "clock"
+        // "clock"
         // "cpu",
         // "memory",
         // "disk"
 
         // "temperature",
         // "backlight",
-        // "keyboard-state",
-        // "sway/language",
         // "battery",
         // "battery#bat2",
-        // "clock",
-        // TODO: tray
-        // "tray",
         // "custom/power"
     ],
     "custom/os": {
@@ -43,35 +44,59 @@
         "tooltip-format": "btw"
     },
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        // "format": "{name}: {icon}",
+        "format": "{name}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        // "ignore-workspaces": ["9"]
+    },
+    "wlr/taskbar": {
         "format": "{icon}",
-        "format-icons": {
-            "1": "",
-            // "1": "",
-            // "2": "",
-            "2": "󰈹",
-            // "3": "",
-            "4": "",
-            // "4": "",
-            "5": "",
-            "6": "",
-            // "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
+        "tooltip-format": "{title}",
+        "icon-size": 17,
+        "on-click": "activate",
+        "on-click-middle": "close",
+        // "ignore-list": [
+        //     "kitty"
+        // ],
+    },
+    "hyprland/window": {
+        "format": "{class} | {title}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1",
+            "(.*)Mozilla Firefox.*": "$1New Tab",
+            "(.*) — Tor Browser": "$1",
+            "(.*) - Blender .*": "$1",
+        },
+        "max-length": 64,
+        "separate-outputs": true
     },
     "custom/spotify": {
         "format": "  {}",
         "tooltip": false,
-        // "exec": "playerctl --player=spotify metadata --format '{{ artist }} | {{ title }}'",
-        "exec": "python ~/.config/waybar/scripts/song_info.py",
+        "exec": "python ~/.config/waybar/scripts/song.py",
         "interval": 1,
-        // "on-click": "playerctl --player=spotify play-pause"
         "on-click": "hyprctl dispatch workspace 4"
+    },
+    "custom/nightlight": {
+        "format": " {}",
+        // "tooltip": false,
+        "exec": "python ~/.config/waybar/scripts/night_light.py",
+        "return-type": "json",
+        "interval": 300
+        // "hide-empty-text": true,
+        // "on-click": ""
+    },
+    "custom/vpn": {
+        "format": " VPN",
+        // "format": " ",
+        // "format": "",
+        // "format": " ",
+        // "format": " ",
+        "exec": "python ~/.config/waybar/scripts/vpn.py",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "mullvad-vpn"
     },
     "keyboard-state": {
         "numlock": true,
@@ -125,9 +150,10 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format": "{:%H:%M | %d.%m.%Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d.%m.%Y}"
+        "format": "{:%H:%M}",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:%d.%m.%Y}",
+        // "format-alt": "{:%d.%m.%Y}"
     },
     "group/hardware": {
         "orientation": "horizontal",
@@ -146,7 +172,8 @@
         "interval": 5
     },
     "disk": {
-        "format": "  {percentage_used}%",
+        "format": " {percentage_used}%",
+        "tooltip-format": "{used} / {total}",
         "interval": 30,
         "path": "/"
     },
