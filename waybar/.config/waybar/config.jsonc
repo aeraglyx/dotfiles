@@ -8,9 +8,9 @@
     "modules-left": [
         "custom/os",
         "hyprland/workspaces",
-        "wlr/taskbar",
+        // "wlr/taskbar",
         // "hyprland/window"
-        "custom/spotify"
+        "custom/song"
     ],
     "modules-center": [
         "hyprland/window"
@@ -19,14 +19,14 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
-        // "custom/spotify",
         // "tray",
         "pulseaudio",
-        "custom/nightlight",
+        // "custom/nightlight",
         "custom/vpn",
         // "network",
         // "power-profiles-daemon",
         "group/hardware",
+        "custom/notification",
         "clock"
         // "clock"
         // "cpu",
@@ -71,7 +71,7 @@
         "max-length": 64,
         "separate-outputs": true
     },
-    "custom/spotify": {
+    "custom/song": {
         "format": "  {}",
         "tooltip": false,
         "exec": "python ~/.config/waybar/scripts/song.py",
@@ -97,6 +97,26 @@
         "return-type": "json",
         "interval": 5,
         "on-click": "mullvad-vpn"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} {}",
+        "format-icons": {
+            "notification": " ",
+            "none": " ",
+            "dnd-notification": " ",
+            "dnd-none": " ",
+            "inhibited-notification": " ",
+            "inhibited-none": " ",
+            "dnd-inhibited-notification": " ",
+            "dnd-inhibited-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "keyboard-state": {
         "numlock": true,

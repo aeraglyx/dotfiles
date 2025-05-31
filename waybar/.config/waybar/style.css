@@ -26,7 +26,7 @@
 @define-color crust #11111b;
 
 * {
-    font-family: "Fira Code Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Fira Code", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 15px;
     min-height: 10px;
@@ -70,9 +70,10 @@ button {
 #window,
 #clock,
 #pulseaudio,
-#custom-spotify,
+#custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-notification,
 #hardware {
     /* background: @base; */
     background: rgba(30, 30, 46, 0.9);
@@ -120,6 +121,11 @@ button {
     color: @red;
 }
 
+#waybar.empty #window {
+    color: transparent;
+    background: none;
+}
+
 #window,
 #clock,
 #battery,
@@ -132,9 +138,10 @@ button {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#custom-spotify,
+#custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-notification,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -154,7 +161,7 @@ button {
 }
 
 #pulseaudio,
-#custom-spotify {
+#custom-song {
     color: @green;
 }
 
@@ -169,6 +176,12 @@ button {
 #custom-vpn:not(.connected) {
     background: @red;
     color: @base;
+}
+
+#custom-notification.inhibited-notification,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-notification {
+    color: @red;
 }
 
 #clock {
