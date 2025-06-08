@@ -14,6 +14,11 @@ return {
             todo_comments.jump_prev()
         end, { desc = "Previous TODO comment" })
 
-        todo_comments.setup()
-    end,
+        todo_comments.setup({
+            signs = false,
+            highlight = {
+                multiline = false,
+            },
+        })
+    end
 }

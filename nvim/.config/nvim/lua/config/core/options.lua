@@ -1,7 +1,9 @@
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
+vim.opt.swapfile = false
+
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.breakindent = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -22,15 +24,22 @@ vim.opt.splitbelow = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.g.have_nerd_font = false
+vim.opt.fillchars:append { eob = " " }
+
+vim.g.have_nerd_font = true
 
 vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"
 end)
 
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = false
+})
+
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
-        vim.opt.formatoptions:remove { "c", "r", "o" }
+        vim.opt.formatoptions:remove({ "c", "r", "o" })
     end,
     desc = "Disable New Line Comment",
 })

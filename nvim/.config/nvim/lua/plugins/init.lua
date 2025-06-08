@@ -8,10 +8,10 @@ return {
         "numToStr/Comment.nvim",
         opts = {
             toggler = {
-                line = "CC",
+                line = "mm",
             },
             opleader = {
-                line = "C",
+                line = "m",
             }
         }
     },

@@ -47,7 +47,7 @@ return {
 
             vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Search Files" })
             vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-            vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+            vim.keymap.set("n", "<leader>st", builtin.live_grep, { desc = "[S]earch by [G]rep" })
             vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
             vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
             vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
@@ -55,6 +55,7 @@ return {
             vim.keymap.set("n", "<leader>sf", builtin.buffers, { desc = "Search existing buffers" })
             vim.keymap.set("n", "<leader>sb", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
             vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+            vim.keymap.set("n", "<leader>gf", builtin.git_status, { desc = "Search [G]it [F]iles" })
 
             vim.keymap.set("n", "<leader>.", find_dotfiles, { desc = "Search dotfiles" })
             vim.keymap.set("n", "<leader>vm", find_nvim_files, { desc = "Search nvim config files" })
