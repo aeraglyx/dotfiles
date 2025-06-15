@@ -27,6 +27,9 @@ return {
                     find_files = {
                         find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
                     },
+                    colorscheme = {
+                        enable_preview = true,
+                    },
                 },
                 extensions_list = { "fzf" },
             })
