@@ -2,6 +2,7 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
+        enabled = false,
         priority = 1000,
         config = function()
             require("catppuccin").setup({
@@ -17,6 +18,18 @@ return {
         end
     },
     {
+        "aeraglyx/onyx.nvim",
+        dev = true,
+        config = function()
+            local reload_onyx = function()
+                vim.cmd("Lazy reload onyx.nvim")
+                vim.cmd("Lazy reload lualine.nvim")
+            end
+            vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Search Files" })
+            require("onyx").setup()
+        end
+    },
+    {
         -- "uga-rosa/ccc.nvim"
         "norcalli/nvim-colorizer.lua",
         config = function()
@@ -26,7 +39,13 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {}
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = require("onyx.lualine")
+                },
+            })
+        end
     },
     {
         "rcarriga/nvim-notify",
