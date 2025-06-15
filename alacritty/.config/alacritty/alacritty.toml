@@ -1,0 +1,24 @@
+[window]
+padding = {x = 13, y = 13}
+
+[font]
+size = 13.0
+# normal = { family = "0xProto" }
+# normal = { family = "iosevka" }
+normal = { family = "Cascadia Code" }
+# normal = { family = "Fira Code Nerd Font" }
+# builtin_box_drawing = false
+
+[colors.primary]
+foreground = "#d0d0d0"
+background = "#282828"
+
+[colors.normal]
+black = "#282828"
+red = "#ff6ea2"
+green = "#93e8c7"
+# yellow = ""
+blue = "#99c0d0"
+# magenta = "#bab0e4"
+# cyan = ""
+white = "#d0d0d0"
