@@ -8,35 +8,30 @@
     "modules-left": [
         "custom/os",
         "hyprland/workspaces",
+        "custom/song"
         // "wlr/taskbar",
         // "hyprland/window"
-        "custom/song"
     ],
     "modules-center": [
-        "hyprland/window"
-        // "clock"
+        "clock"
     ],
     "modules-right": [
+        "pulseaudio",
+        "custom/vpn",
+        "group/hardware",
+        "custom/notification"
         // "mpd",
         // "idle_inhibitor",
         // "tray",
-        "pulseaudio",
         // "custom/nightlight",
-        "custom/vpn",
         // "network",
         // "power-profiles-daemon",
-        "group/hardware",
-        "custom/notification",
-        "clock"
-        // "clock"
         // "cpu",
         // "memory",
         // "disk"
-
         // "temperature",
         // "backlight",
         // "battery",
-        // "battery#bat2",
         // "custom/power"
     ],
     "custom/os": {
@@ -179,23 +174,42 @@
         "orientation": "horizontal",
         "modules": [
             "cpu",
+            "custom/gpu",
             "memory",
             "disk"
         ]
     },
     "cpu": {
         "format": "  {usage}%",
-        "interval": 5
+        "interval": 5,
+        "states": {
+            "critical": 80,
+        },
+    },
+    "custom/gpu": {
+        "format": "󰢮  {text}%",
+        "interval": 5,
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "states": {
+            // TODO: why no worky
+            "critical": 80,
+        },
     },
     "memory": {
         "format": "  {percentage}%",
-        "interval": 5
+        "interval": 5,
+        "states": {
+            "critical": 80,
+        },
     },
     "disk": {
         "format": " {percentage_used}%",
         "tooltip-format": "{used} / {total}",
         "interval": 30,
-        "path": "/"
+        "path": "/",
+        "states": {
+            "critical": 80,
+        },
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -249,7 +263,8 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        // FIXME: works every other scroll
+        "scroll-step": 2.5, // %, can be a float
         // "format": "{volume}% {icon} {format_source}",
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -266,6 +281,11 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
+        },
+        "states": {
+            // "warning-high": 50,
+            "normal": 40,
+            "critical": 5
         },
         "on-click": "pavucontrol"
     },

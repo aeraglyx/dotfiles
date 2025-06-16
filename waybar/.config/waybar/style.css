@@ -1,32 +1,13 @@
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
+@define-color base #282828;
+@define-color text #cccccc;
+@define-color hover #404040;
+@define-color accent #99c0d0;
 @define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
+@define-color red #ff6ca1;
+/* @define-color yellow #f9e2af; */
 
 * {
-    font-family: "Fira Code", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Caskaydia Cove Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 15px;
     min-height: 10px;
@@ -34,21 +15,16 @@
 
 window#waybar {
     color: @text;
-    /* background-color: rgba(30, 30, 46, 0.90); */
     background: transparent;
-    /* border-bottom: 2px solid @surface0; */
-    /* border: 2px solid @surface0; */
     /* transition-property: background-color; */
     /* transitionduration: .5s; */
     /* border-radius: 16px; */
 }
 
 tooltip {
-    background: @surface0;
-    /* background: rgba(30, 30, 46, 0.9); */
-    /* border: 2px solid @surface0; */
-    border: none;
-    border-radius: 8px;
+    background: @base;
+    border: 2px solid @hover;
+    border-radius: 9px;
 }
 tooltip label {
     color: @text;
@@ -75,10 +51,8 @@ button {
 #custom-vpn,
 #custom-notification,
 #hardware {
-    /* background: @base; */
-    background: rgba(30, 30, 46, 0.9);
-    /* background: transparent; */
-    /* border: 2px solid @surface0; */
+    background: @base;
+    /* border: 3px solid @hover; */
     border-radius: 9px;
 }
 
@@ -103,18 +77,17 @@ button {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: @surface1;
-    /* border: 2px solid @overlay0; */
+    background: @hover;
 }
 
 /* #taskbar button.active, */
 #workspaces button.active {
-    background: @text;
+    background: @accent;
     color: @base;
 }
 
 #taskbar button.active {
-    background: @surface1;
+    background: @hover;
 }
 
 #workspaces button.urgent {
@@ -130,6 +103,7 @@ button {
 #clock,
 #battery,
 #cpu,
+#custom-gpu,
 #memory,
 #disk,
 #temperature,
@@ -154,38 +128,41 @@ button {
 }
 
 #custom-os {
-    /* color: @sapphire; */
+    /* color: @accent; */
     font-size: 22px;
     margin-left: 4px;
     margin-right: 8px;
 }
 
-#pulseaudio,
-#custom-song {
-    color: @green;
+/* #pulseaudio, */
+/* #custom-song { */
+/*     color: @green; */
+/* } */
+
+#pulseaudio:not(.normal),
+#pulseaudio.critical {
+    color: @red;
 }
 
-#custom-nightlight.warm {
-    color: @rosewater;
+#cpu.critical,
+#custom-gpu.critical,
+#memory.critical,
+#disk.critical {
+    color: @red;
 }
 
-#custom-vpn {
-    color: @blue;
-}
+/* #custom-nightlight.warm { */
+/*     color: @rosewater; */
+/* } */
 
 #custom-vpn:not(.connected) {
-    background: @red;
-    color: @base;
+    color: @red;
 }
 
 #custom-notification.inhibited-notification,
 #custom-notification.dnd-inhibited-notification,
 #custom-notification.dnd-notification {
     color: @red;
-}
-
-#clock {
-    color: @mauve;
 }
 
 #battery.charging, #battery.plugged {
@@ -197,36 +174,20 @@ button {
 }
 
 #power-profiles-daemon.performance {
-    /* background-color: #f53c3c; */
     color: @red;
 }
 
 #power-profiles-daemon.balanced {
-    /* background-color: #2980b9; */
-    /* color: @red; */
+    /* color: @text; */
 }
 
 #power-profiles-daemon.power-saver {
-    /* background-color: #2ecc71; */
     color: @green;
 }
 
 label:focus {
-    background-color: @surface0;
+    background-color: @hover;
 }
-
-/* #cpu { */
-/*     background-color: #2ecc71; */
-/*     color: #000000; */
-/* } */
-
-/* #memory { */
-/*     background-color: #9b59b6; */
-/* } */
-
-/* #disk { */
-/*     background-color: #964B00; */
-/* } */
 
 #backlight {
     background-color: #90b1b1;
@@ -317,30 +278,6 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad {
