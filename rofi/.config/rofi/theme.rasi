@@ -1,25 +1,21 @@
-@import "catppuccin-mocha"
+@import "colors"
 
 * {
-    font: "Fira Code Nerd Font SemiBold 14";
-    bg: @base;
-    bga: #1e1e2ee6;
-    fg: @text;
-    dim: @overlay0;
-    // background-color: @bg;
+    // font: "Fira Code Nerd Font SemiBold 14";
+    font: "Caskaydia Cove Nerd Font SemiBold 14";
 
     background-color: transparent;
-    text-color: @fg;
+    text-color: @text;
+    highlight: none;
 }
 
 window {
     width: 800px;
     padding: 15;
-    background-color: @bga;
+    background-color: @base;
     opacity: 0.5;
-    border: 2;
-    border-color: @surface0;
-    // border-color: @bg;
+    border: 3;
+    border-color: @blue;
     border-radius: 20px;
 }
 
@@ -32,8 +28,16 @@ mainbox {
 inputbar {
     padding: 20px;
     spacing: 0px;
-    text-color: @fg;
-    children: [ "prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+    text-color: @text;
+    children: [
+        "prompt",
+        "textbox-prompt-colon",
+        "entry",
+        "num-filtered-rows",
+        "textbox-num-sep",
+        "num-rows",
+        "case-indicator"
+    ];
 }
 
 prompt {
@@ -49,7 +53,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    text-color: @fg;
+    text-color: @text;
     cursor: text;
     spacing: 0;
     placeholder-color: @dim;
@@ -71,18 +75,18 @@ element {
     border: 0;
     border-radius: 10px;
     background-color: transparent;
-    // background-color: @bg;
-    text-color: @fg;
+    // background-color: @base;
+    text-color: @text;
 }
 
-element selected {
-    background-color: @surface0;
-    text-color: @fg;
-}
 // element selected {
-//     background-color: @fg;
-//     text-color: @bg;
+//     background-color: @smol;
+//     text-color: @text;
 // }
+element selected {
+    background-color: @blue;
+    text-color: @base;
+}
 
 // element normal.normal {
 //     background-color: @normal-background;
@@ -142,7 +146,7 @@ message {
 }
 
 textbox {
-    text-color: @fg;
+    text-color: @text;
 }
 
 scrollbar {
@@ -150,24 +154,24 @@ scrollbar {
     padding: 0;
     handle-width: 8px;
     border: 0;
-    handle-color: @fg;
+    handle-color: @text;
     // border-radius: 2px;
 }
 
 sidebar {
-    border-color: @fg;
+    border-color: @text;
     // border-radius: 8px;
 }
 
 button {
     cursor: pointer;
     spacing: 0;
-    text-color: @fg;
+    text-color: @text;
 }
 
 button selected {
-    background-color: @fg;
-    text-color: @bg;
+    background-color: @text;
+    text-color: @base;
 }
 
 num-filtered-rows {
@@ -188,5 +192,5 @@ textbox-num-sep {
 
 case-indicator {
     spacing: 0;
-    text-color: @fg;
+    text-color: @text;
 }

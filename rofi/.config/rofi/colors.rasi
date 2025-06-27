@@ -1,0 +1,15 @@
+* {
+    base: #282828;
+
+    smol: #393939;
+    dim: #505050;
+    meh: #909090;
+    text: #cccccc;
+
+    red: #ff78be;
+    peach: #deb39c;
+    mire: #c0c295;
+    green: #97cbb8;
+    blue: #96c6dd;
+    purp: #bcb8e2;
+}
