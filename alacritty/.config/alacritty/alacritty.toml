@@ -1,3 +1,6 @@
+[general]
+import = [ "~/.config/alacritty/colors.toml" ]
+
 [window]
 padding = {x = 14, y = 14}
 dynamic_padding = true
@@ -6,32 +9,3 @@ dynamic_padding = true
 size = 13.0
 normal = { family = "Caskaydia Cove Nerd Font" }
 builtin_box_drawing = false
-
-[colors.primary]
-foreground = "#d0d0d0"
-background = "#282828"
-
-[colors]
-cursor = { text = "#282828", cursor = "#d0d0d0" }
-
-[colors.normal]
-black = "#282828"
-red = "#ff6ea2"
-green = "#93e8c7"
-yellow = "#f9e2af"
-blue = "#99c0d0"
-magenta = "#bab0e4"
-cyan = "#99c0d0"
-white = "#d0d0d0"
-
-[colors.bright]
-black = "#282828"
-red = "#ff6ea2"
-green = "#93e8c7"
-yellow = "#f9e2af"
-blue = "#99c0d0"
-magenta = "#bab0e4"
-cyan = "#99c0d0"
-white = "#d0d0d0"
-
-# [colors.dim]
