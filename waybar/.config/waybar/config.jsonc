@@ -3,7 +3,7 @@
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30,
-    "spacing": 10,
+    "spacing": 12,
     "margin": "12 12 0 12",
     "modules-left": [
         "custom/os",
@@ -180,14 +180,16 @@
         ]
     },
     "cpu": {
-        "format": "  {usage}%",
+        // "format": "  {usage}%",
+        "format": "CPU {usage}%",
         "interval": 5,
         "states": {
             "critical": 80,
         },
     },
     "custom/gpu": {
-        "format": "󰢮  {text}%",
+        // "format": "󰢮  {text}%",
+        "format": "GPU {text}%",
         "interval": 5,
         "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
         "states": {
@@ -196,7 +198,8 @@
         },
     },
     "memory": {
-        "format": "  {percentage}%",
+        // "format": "  {percentage}%",
+        "format": "RAM {percentage}%",
         "interval": 5,
         "states": {
             "critical": 80,
