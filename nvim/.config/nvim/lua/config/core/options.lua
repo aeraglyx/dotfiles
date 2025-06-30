@@ -9,8 +9,12 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.cindent = true
 
-vim.opt.wrap = false
+-- TODO: per ft (.md)
+vim.opt.wrap = true
+vim.opt.linebreak = true
 vim.opt.breakindent = true
+
+-- vim.opt.spell = true
 
 vim.opt.number = true
 vim.opt.relativenumber = false
@@ -38,16 +42,9 @@ vim.schedule(function()
 end)
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = false,
     float = { border = "rounded" },
-})
-
-vim.api.nvim_create_autocmd("BufEnter", {
-    callback = function()
-        vim.opt.formatoptions:remove({ "c", "r", "o" })
-    end,
-    desc = "Disable New Line Comment",
 })
 
 vim.filetype.add({
@@ -57,4 +54,20 @@ vim.filetype.add({
     pattern = {
         [".*/hypr/.*%.conf"] = "hyprlang",
     },
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    desc = "Disable New Line Comment",
+    callback = function()
+        vim.opt.formatoptions:remove({ "c", "r", "o" })
+    end,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Hightlight selection on yank",
+    group = vim.api.nvim_create_augroup("highlight_yank", {}),
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 125 })
+    end,
 })

@@ -24,6 +24,10 @@ keymap.set("n", "Y", "<cmd>%y<CR>")
 keymap.set("n", "<space>o", "mxo<esc>`x")
 keymap.set("n", "<space>O", "mxO<esc>`x")
 
+-- moving vertically through wrapped lines
+keymap.set("n", "<down>", "gj")
+keymap.set("n", "<up>", "gk")
+
 -- moving lines up and down
 keymap.set("n", "<A-e>", "<cmd>m +1<CR>==")
 keymap.set("n", "<A-u>", "<cmd>m -2<CR>==")
@@ -54,16 +58,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- LSP
 keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
 keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
+keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { desc = "Show diagnostics" })
 
 -- TODO: based on language or find a plugin
 -- keymap.set("n", "<leader>to", "o--TODO: ", { desc = "TODO comment snippet" })
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("highlight_yank", {}),
-    desc = "Hightlight selection on yank",
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 100 })
-        -- vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
-    end,
-})
