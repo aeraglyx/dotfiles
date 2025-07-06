@@ -23,9 +23,15 @@ return {
         config = function()
             local reload_onyx = function()
                 vim.cmd("Lazy reload onyx.nvim")
+                local notify_orig = vim.notify
+                vim.notify = function(...) end
                 vim.cmd("Lazy reload lualine.nvim")
+                vim.cmd("Lazy reload todo-comments.nvim")
+                vim.cmd("Lazy reload indent-blankline.nvim")
+                vim.cmd("Lazy reload nvim-notify")
+                vim.notify = notify_orig
             end
-            vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Search Files" })
+            vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Reload [TH]eme" })
             require("onyx").setup()
         end
     },
