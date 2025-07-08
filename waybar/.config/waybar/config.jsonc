@@ -16,6 +16,7 @@
         "clock"
     ],
     "modules-right": [
+        "custom/screen-recorder",
         "pulseaudio",
         "custom/vpn",
         "group/hardware",
@@ -92,6 +93,12 @@
         "return-type": "json",
         "interval": 5,
         "on-click": "mullvad-vpn"
+    },
+    "custom/screen-recorder": {
+        "format": " REC",
+        "exec": "pgrep gpu-screen-reco",
+        "interval": 2,
+        "on-click": "pkill -SIGINT gpu-screen-reco"
     },
     "custom/notification": {
         "tooltip": false,

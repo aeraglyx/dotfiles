@@ -43,6 +43,7 @@ button {
 #custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-screen-recorder,
 #custom-notification,
 #hardware {
     background: @base;
@@ -109,6 +110,7 @@ button {
 #custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-screen-recorder,
 #custom-notification,
 #tray,
 #mode,
@@ -145,6 +147,7 @@ button {
     color: @red;
 }
 
+#custom-screen-recorder,
 #custom-vpn:not(.connected) {
     color: @red;
 }
