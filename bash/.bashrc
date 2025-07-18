@@ -2,9 +2,11 @@ eval "$(starship init bash)"
 
 alias resh="$SHELL"
 
-alias nrs="sudo nixos-rebuild switch --flake ~/nixos#${hostname}"
-alias nrt="sudo nixos-rebuild test --flake ~/nixos#${hostname}"
-alias nfu="sudo nix flake update --flake ~/nixos#${hostname}"
+flake="--flake ~/nixos#${hostname}"
+alias nrs="sudo nixos-rebuild switch $flake"
+alias nrt="sudo nixos-rebuild test $flake"
+alias nrd="sudo nixos-rebuild dry-activate $flake"
+alias nfu="sudo nix flake update $flake"
 alias ncg="sudo nix-collect-garbage"
 
 alias g="lazygit"
