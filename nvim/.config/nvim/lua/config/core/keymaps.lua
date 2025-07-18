@@ -4,20 +4,20 @@ vim.g.mapleader = " "
 
 keymap.set("n", "<leader>so", "<cmd>source %<CR>")
 keymap.set("n", "<leader>e", "<cmd>Explore<CR>")
-keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 keymap.set("i", "<C-BC>", "<C-w>")
 
 -- saving
 keymap.set("n", "<C-s>", "<cmd>w<CR>")
-keymap.set("v", "<C-s>", "<Esc><cmd>w<CR>")
-keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>gi")
+keymap.set("v", "<C-s>", "<esc><cmd>w<CR>")
+keymap.set("i", "<C-s>", "<esc><cmd>w<CR>gi")
 
 -- quitting
-keymap.set({ "n", "i", "v" }, "<C-d>", "<Esc><cmd>q<CR>")
-keymap.set({ "n", "i", "v" }, "<C-D>", "<Esc><cmd>q!<CR>")
+keymap.set({ "n", "i", "v" }, "<C-d>", "<esc><cmd>q<CR>")
+keymap.set({ "n", "i", "v" }, "<C-D>", "<esc><cmd>q!<CR>")
 
 -- copying
-keymap.set("v", "y", "ygv<Esc>", { noremap = true, silent = true })
+keymap.set("v", "y", "ygv<esc>", { noremap = true, silent = true })
 keymap.set("n", "Y", "<cmd>%y<CR>")
 
 -- new lines
@@ -31,10 +31,10 @@ keymap.set("n", "<up>", "gk")
 -- moving lines up and down
 keymap.set("n", "<A-e>", "<cmd>m +1<CR>==")
 keymap.set("n", "<A-u>", "<cmd>m -2<CR>==")
-keymap.set("v", "<A-e>", "<cmd>m '>+1<CR>gv=gv")
-keymap.set("v", "<A-u>", "<cmd>m '<-2<CR>gv=gv")
-keymap.set("i", "<A-e>", "<Esc><cmd>m +1<CR>==gi")
-keymap.set("i", "<A-u>", "<Esc><cmd>m -2<CR>==gi")
+keymap.set("v", "<A-e>", ":m '>+1<CR>gv=gv", { silent = true })
+keymap.set("v", "<A-u>", ":m '<-2<CR>gv=gv", { silent = true })
+keymap.set("i", "<A-e>", "<esc><cmd>m +1<CR>==gi")
+keymap.set("i", "<A-u>", "<esc><cmd>m -2<CR>==gi")
 
 -- windows
 keymap.set("n", "<leader>wa", "<cmd>vsplit<CR>", { desc = "Split window vertically" })

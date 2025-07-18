@@ -33,18 +33,27 @@ return {
                 }
             }
 
+            -- local pyright_opts = {
+            --     settings = {
+            --         pyright = {
+            --             -- typeCheckingMode = "standard",  -- standard or off
+            --         },
+            --     }
+            -- }
+
             local basedpyright_opts = {
                 settings = {
                     basedpyright = {
-                        typeCheckingMode = "standard",  -- standard or off
                         -- logLevel = "error",
+                        typeCheckingMode = "standard",  -- standard or off
+                        -- reportInvalidTypeForm = "none",
                     },
                 }
             }
 
             require('lspconfig.ui.windows').default_options.border = "rounded"
 
-            -- lspconfig.pyright.setup({})
+            -- lspconfig.pyright.setup(pyright_opts)
             -- lspconfig.nil_ls.setup({})
             lspconfig.lua_ls.setup(lua_ls_opts)
             lspconfig.clangd.setup({})
@@ -54,6 +63,10 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("attach-lsp-group", { clear = true }),
                 callback = function(event)
+
+                    local client = vim.lsp.get_client_by_id(event.data.client_id)
+                    client.server_capabilities.semanticTokensProvider = nil
+
                     local map = function(keys, func, desc, mode)
                         mode = mode or "n"
                         vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })

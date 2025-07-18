@@ -65,6 +65,9 @@ return {
                     enabled = true,
                     show_with_menu = false
                 },
+                trigger = {
+                    show_in_snippet = false
+                }
             },
 
             signature = {

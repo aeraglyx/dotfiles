@@ -20,7 +20,9 @@ return {
     {
         "aeraglyx/onyx.nvim",
         dev = true,
+        priority = 1000,
         config = function()
+            require("onyx").setup()
             local reload_onyx = function()
                 vim.cmd("Lazy reload onyx.nvim")
                 local notify_orig = vim.notify
@@ -32,7 +34,6 @@ return {
                 vim.notify = notify_orig
             end
             vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Reload [TH]eme" })
-            require("onyx").setup()
         end
     },
     {
@@ -49,6 +50,14 @@ return {
             require("lualine").setup({
                 options = {
                     theme = require("onyx.lualine")
+                },
+                sections = {
+                    lualine_a = {"mode"},
+                    lualine_b = {"branch", "diagnostics"},
+                    lualine_c = {"filename"},
+                    lualine_x = {"encoding", "fileformat", "filetype"},
+                    lualine_y = {"progress"},
+                    lualine_z = {"location"}
                 },
             })
         end
@@ -81,11 +90,9 @@ return {
         "folke/zen-mode.nvim",
         opts = {
             window = {
-                backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-                width = 120, -- width of the Zen window
-                height = 1, -- height of the Zen window
-                -- options = {
-                -- },
+                backdrop = 1, -- shade of the backdrop (1 is normal)
+                width = 120,
+                height = 1,
             },
         }
     },
