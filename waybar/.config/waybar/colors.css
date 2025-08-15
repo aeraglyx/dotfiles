@@ -1,7 +1,9 @@
-@define-color base #282828;
-@define-color smol #393939;
+@define-color base #222222;
+@define-color smol #383838;
+@define-color dim #525252;
+@define-color meh #909090;
 @define-color text #cccccc;
 
-@define-color red #ff77a2;
+@define-color red #fd7eaa;
 @define-color green #97cbb8;
 @define-color blue #96c6dd;

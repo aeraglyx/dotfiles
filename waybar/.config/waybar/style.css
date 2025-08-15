@@ -3,13 +3,14 @@
 * {
     font-family: "Caskaydia Cove Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 17px;
     min-height: 10px;
 }
 
 window#waybar {
     color: @text;
     background: transparent;
+    /* background: @base; */
     /* transition-property: background-color; */
     /* transitionduration: .5s; */
     /* border-radius: 16px; */
@@ -48,7 +49,7 @@ button {
 #hardware {
     background: @base;
     border: 3px solid @smol;
-    border-radius: 10px;
+    border-radius: 11px;
 }
 
 #taskbar button,
@@ -118,9 +119,9 @@ button {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0px 12px;
+    padding: 2px 12px;
     color: inherit;
-    padding-top: 1px;
+    padding-top: 3px;
 }
 
 #custom-os {

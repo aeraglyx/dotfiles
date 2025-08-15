@@ -1,10 +1,10 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30,
-    "spacing": 12,
-    "margin": "12 12 0 12",
+    // "layer": "top",
+    // "position": "bottom", // top | bottom | left | right
+    // "height": 30,
+    "spacing": 14,
+    "margin": "14 14 0 14",
     "modules-left": [
         "custom/os",
         "hyprland/workspaces",
@@ -37,7 +37,7 @@
     ],
     "custom/os": {
         "format": "",
-        "tooltip-format": "btw"
+        "tooltip-format": "nixos, btw"
     },
     "hyprland/workspaces": {
         "format": "{name}",
@@ -85,10 +85,6 @@
     },
     "custom/vpn": {
         "format": " VPN",
-        // "format": " ",
-        // "format": "",
-        // "format": " ",
-        // "format": " ",
         "exec": "python ~/.config/waybar/scripts/vpn.py",
         "return-type": "json",
         "interval": 5,
@@ -173,8 +169,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": "{:%H:%M}",
-        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "tooltip-format": "{:%d.%m.%Y}",
+        "tooltip-format": "{:%A %d.%m.%Y}",
         // "format-alt": "{:%d.%m.%Y}"
     },
     "group/hardware": {
