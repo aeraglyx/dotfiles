@@ -1,12 +1,11 @@
 * {
-    base: #282828;
-
-    smol: #393939;
-    dim: #505050;
+    base: #222222;
+    smol: #383838;
+    dim: #525252;
     meh: #909090;
     text: #cccccc;
 
-    red: #ff78be;
+    red: #fd7eaa;
     peach: #deb39c;
     mire: #c0c295;
     green: #97cbb8;

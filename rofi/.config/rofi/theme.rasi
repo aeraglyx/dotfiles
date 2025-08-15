@@ -1,9 +1,7 @@
 @import "colors"
 
 * {
-    // font: "Fira Code Nerd Font SemiBold 14";
     font: "Caskaydia Cove Nerd Font SemiBold 14";
-
     background-color: transparent;
     text-color: @text;
     highlight: none;
@@ -11,12 +9,12 @@
 
 window {
     width: 800px;
-    padding: 15;
+    padding: 10;
     background-color: @base;
     opacity: 0.5;
     border: 3;
-    border-color: @blue;
-    border-radius: 20px;
+    border-color: @dim;
+    border-radius: 14px;
 }
 
 mainbox {
@@ -57,7 +55,7 @@ entry {
     cursor: text;
     spacing: 0;
     placeholder-color: @dim;
-    // placeholder:       "...";
+    // placeholder: "...";
 }
 
 listview {
@@ -73,19 +71,15 @@ element {
     spacing: 20px;
     cursor: pointer;
     border: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: transparent;
     // background-color: @base;
     text-color: @text;
 }
 
-// element selected {
-//     background-color: @smol;
-//     text-color: @text;
-// }
 element selected {
-    background-color: @blue;
-    text-color: @base;
+    background-color: #2a2a2a;
+    // text-color: @blue;
 }
 
 // element normal.normal {
