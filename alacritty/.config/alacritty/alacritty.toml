@@ -6,6 +6,6 @@ padding = {x = 14, y = 14}
 dynamic_padding = true
 
 [font]
-size = 13.0
+size = 14.0
 normal = { family = "Caskaydia Cove Nerd Font" }
 builtin_box_drawing = false
