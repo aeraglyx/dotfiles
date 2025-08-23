@@ -2,22 +2,32 @@ add_newline = true
 
 format = """
 [╭── ](white)\
+$jobs\
 $directory\
 $git_branch\
-$git_status
-[╰─](white)\
+$git_status\
+$nix_shell\
+\n[╰─](white)\
 $character
 """
+
+[jobs]
+style = "bold red"
 
 [directory]
 truncation_length = 3
 truncation_symbol = "../"
 
 [git_branch]
-style = "bold white"
+style = "white"
 
 [git_status]
 style = "bold purple"
+
+[nix_shell]
+symbol = "󱄅 "
+style = "blue"
+format = "[$symbol]($style) "
 
 [character]
 success_symbol = "[❯](white)"
