@@ -1,4 +1,5 @@
 eval "$(starship init bash)"
+eval "$(zoxide init --cmd h bash)"
 
 alias resh="$SHELL"
 
