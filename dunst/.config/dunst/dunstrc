@@ -3,8 +3,8 @@
     follow = keyboard
     layer = top
     origin = top-right
-    width = (0, 600)
-    height = (0, 400)
+    width = (0, 500)
+    height = (0, 300)
     offset = 42x42
     # scale = 0
 
@@ -17,7 +17,7 @@
     frame_color = "#383838"
     separator_height = 3
     separator_color = frame
-    font = Caskaydia Cove Nerd Font 13
+    font = Caskaydia Cove Nerd Font 12
 
     alignment = left
     markup = full
