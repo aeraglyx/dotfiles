@@ -3,7 +3,7 @@ local keymap = vim.keymap
 vim.g.mapleader = " "
 
 keymap.set("n", "<leader>so", "<cmd>source %<CR>")
-keymap.set("n", "<leader>e", "<cmd>Explore<CR>")
+-- keymap.set("n", "<leader>e", "<cmd>Explore<CR>")
 keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 keymap.set("i", "<C-BC>", "<C-w>")
 
@@ -65,3 +65,6 @@ keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { des
 
 -- zen mode
 keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Zen Mode" })
+
+-- oil.nvim
+vim.keymap.set("n", "<leader>et", "<cmd>Oil<CR>", { desc = "Open parent directory" })

@@ -1,23 +1,5 @@
 return {
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        enabled = false,
-        priority = 1000,
-        config = function()
-            require("catppuccin").setup({
-                transparent_background = true,
-                integrations = {
-                    notify = true,
-                    flash = true,
-                    gitsigns = true,
-                    noice = true,
-                },
-            })
-            vim.cmd.colorscheme("catppuccin-mocha")
-        end
-    },
-    {
         "aeraglyx/onyx.nvim",
         dev = true,
         priority = 1000,
@@ -31,6 +13,7 @@ return {
                 vim.cmd("Lazy reload todo-comments.nvim")
                 vim.cmd("Lazy reload indent-blankline.nvim")
                 vim.cmd("Lazy reload nvim-notify")
+                vim.cmd("Lazy reload gitsigns.nvim")
                 vim.notify = notify_orig
             end
             vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Reload [TH]eme" })
@@ -40,7 +23,7 @@ return {
         -- "uga-rosa/ccc.nvim"
         "norcalli/nvim-colorizer.lua",
         config = function()
-            require("colorizer").setup()
+            require("colorizer").setup({ "*" }, { names = false })
         end
     },
     {
