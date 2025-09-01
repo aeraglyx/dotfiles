@@ -41,6 +41,7 @@ button {
 #window,
 #clock,
 #pulseaudio,
+#network,
 #custom-song,
 #custom-nightlight,
 #custom-vpn,
@@ -136,8 +137,13 @@ button {
 /*     color: @green; */
 /* } */
 
+#pulseaudio.muted,
 #pulseaudio:not(.normal),
 #pulseaudio.critical {
+    color: @red;
+}
+
+#network.disconnected {
     color: @red;
 }
 
@@ -152,6 +158,9 @@ button {
 #custom-vpn:not(.connected) {
     color: @red;
 }
+
+
+/* UNUSED STUFF */
 
 #custom-notification.inhibited-notification,
 #custom-notification.dnd-inhibited-notification,
@@ -181,14 +190,6 @@ button {
 
 label:focus {
     background-color: @smol;
-}
-
-#network.disconnected {
-    color: @red;
-}
-
-#pulseaudio.muted {
-    color: @red;
 }
 
 #wireplumber.muted {
