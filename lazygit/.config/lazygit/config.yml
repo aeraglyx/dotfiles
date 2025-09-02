@@ -1,1 +1,36 @@
 disableStartupPopups: true
+
+gui:
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    # searchingActiveBorderColor:
+    inactiveBorderColor:
+      - "#cccccc"
+      # - "#909090"
+    optionsTextColor:
+      - "#909090"
+    selectedLineBgColor:
+      - "#383838"
+    # inactiveViewSelectedLineBgColor:
+    # cherryPickedCommitBgColor:
+    #   - "#45475a"
+    # cherryPickedCommitFgColor:
+    #   - "#89b4fa"
+    # unstagedChangesColor:
+    #   - red
+    defaultFgColor:
+      - "#cccccc"
+    # searchingActiveBorderColor:
+    #   - "#f9e2af"
+    # markedBaseCommitBgColor:
+    # markedBaseCommitFgColor:
+
+  authorColors:
+    # "*": magenta
+    "*": "#909090"
+
+  # keybindings:
+  #   universal:
+  #     quit: <esc>
