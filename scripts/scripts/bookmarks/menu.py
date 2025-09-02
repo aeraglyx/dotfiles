@@ -1,7 +1,9 @@
 import os
 import json
+import html
 
 file_in = os.path.expanduser("~/projects/bookmarks/bookmarks.json")
+path_color_hex = "#525252"
 
 def walk(node, path=None):
 
@@ -16,10 +18,13 @@ def walk(node, path=None):
 
         path_str = ""
         if path:
-            path_str = " / ".join(path) + " / "
-            path_str = f"<span foreground='#525252'>{path_str}</span>"
+            delimiter = " / "
+            path_str = delimiter.join(path) + delimiter
+            path_str = f"<span foreground='{path_color_hex}'>{path_str}</span>"
 
-        print(path_str + name + " " + node["url"])
+        name = html.escape(name)
+        full_path_str = path_str + name + " " + node["url"]
+        print(full_path_str)
 
     elif "children" in node:
         new_path = path + [node["name"]]
