@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    layer = top
+    layer = overlay
     origin = top-right
     width = (0, 500)
     height = (0, 300)
@@ -53,12 +53,12 @@
 
 [urgency_low]
     foreground = "#cccccc"
-    timeout = 5
+    timeout = 2
 
 [urgency_normal]
     foreground = "#cccccc"
     frame_color = "#cccccc"
-    timeout = 10
+    timeout = 8
 
 [urgency_critical]
     foreground = "#fd7eaa"
