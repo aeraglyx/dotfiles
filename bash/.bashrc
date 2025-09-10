@@ -3,14 +3,16 @@ eval "$(zoxide init --cmd h bash)"
 
 alias resh="$SHELL"
 
-flake="--flake ~/nixos#${hostname}"
+flake="--flake ~/nixos#${HOSTNAME}"
 alias nrs="sudo nixos-rebuild switch $flake"
 alias nrt="sudo nixos-rebuild test $flake"
 alias nrd="sudo nixos-rebuild dry-activate $flake"
 alias nfu="sudo nix flake update $flake"
 alias ncg="sudo nix-collect-garbage"
+alias ntr="nix-tree /home/aeraglyx/nixos#nixosConfigurations.${HOSTNAME}.config.system.build.toplevel"
 
 alias g="lazygit"
+alias grh="git fetch --all && git reset --hard origin/main"
 
 alias e="nvim"
 alias et="nvim ."
