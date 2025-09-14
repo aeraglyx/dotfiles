@@ -7,7 +7,7 @@ flake="--flake ~/nixos#${HOSTNAME}"
 alias nrs="sudo nixos-rebuild switch $flake"
 alias nrt="sudo nixos-rebuild test $flake"
 alias nrd="sudo nixos-rebuild dry-activate $flake"
-alias nfu="sudo nix flake update $flake"
+alias nfu="sudo nix flake update --flake ~/nixos"
 alias ncg="sudo nix-collect-garbage"
 alias ntr="nix-tree /home/aeraglyx/nixos#nixosConfigurations.${HOSTNAME}.config.system.build.toplevel"
 
@@ -16,6 +16,7 @@ alias grh="git fetch --all && git reset --hard origin/main"
 
 alias e="nvim"
 alias et="nvim ."
+alias lsa="ls -Alh"
 
 alias en="cd ~/nixos/ && nvim ."
 alias ed="cd ~/dotfiles/ && nvim ."
