@@ -1,0 +1,17 @@
+[mgr]
+cwd = { fg = "#525252" }
+hovered = { fg = "#222222", bg = "blue", bold = true }
+preview_hovered = { bg = "#383838" }
+border_style = { fg = "#383838" }
+
+[mode]
+normal_main = { fg = "#222222", bg = "blue", bold = true }
+normal_alt = { fg = "white", bg = "#383838", bold = false }
+
+[filetype]
+rules = [
+    { mime = "inode/empty", fg = "#525252" },
+    { name = "*", is = "orphan", fg = "red" },
+    { name = "*", fg = "#888888" },
+    { name = "*/", fg = "white" }
+]
