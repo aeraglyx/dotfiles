@@ -1,13 +1,13 @@
 add_newline = true
 
 format = """
-[╭── ](white)\
+[╭── ](bold #888888)\
 $jobs\
 $directory\
 $git_branch\
 $git_status\
 $nix_shell\
-\n[╰─](white)\
+\n[╰─](bold #888888)\
 $character
 """
 
@@ -15,21 +15,24 @@ $character
 style = "bold red"
 
 [directory]
-truncation_length = 4
+truncation_length = 3
 truncation_symbol = "../"
-style = "bold blue"
-
-[git_branch]
 style = "white"
 
+[git_branch]
+symbol = " "
+style = "white"
+format = '[on ](#888888)[$symbol$branch]($style) '
+
 [git_status]
-style = "bold purple"
+disabled = true
+style = "#888888"
 
 [nix_shell]
 symbol = "󱄅 "
-style = "blue"
-format = "[$symbol]($style) "
+style = "white"
+format = '[via ](#888888)[$symbol$name]($style) '
 
 [character]
-success_symbol = "[❯](white)"
-error_symbol = "[❯](white)"
+success_symbol = "[λ](bold blue)"
+error_symbol = "[λ](bold red)"
