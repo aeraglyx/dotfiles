@@ -1,0 +1,18 @@
+backend = "wayland"             # Backend to use: "auto", "hyprland" or "wayland"
+start_hyprsunset = false        # Set true if you're not using hyprsunset.service
+startup_transition = true       # Enable smooth transition when sunsetr starts
+startup_transition_duration = 1 # Duration of startup transition in seconds (1-60)
+
+night_temp = 3500
+day_temp = 6500
+night_gamma = 100
+day_gamma = 100
+
+transition_mode = "center"      # Select: "geo", "finish_by", "start_at", "center"
+sunset = "01:00:00"             # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
+sunrise = "08:00:00"            # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
+transition_duration = 120       # Transition duration in minutes (5-120)
+update_interval = 60            # Update frequency during transitions in seconds (10-300)
+
+# latitude = 0.0                 # Geographic latitude (auto-detected on first run)
+# longitude = 0.0                # Geographic longitude (use 'sunsetr --geo' to change)
