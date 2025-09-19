@@ -10,6 +10,7 @@ alias nrd="sudo nixos-rebuild dry-activate $flake"
 alias nfu="sudo nix flake update --flake ~/nixos"
 alias ncg="sudo nix-collect-garbage"
 alias ntr="nix-tree /home/aeraglyx/nixos#nixosConfigurations.${HOSTNAME}.config.system.build.toplevel"
+alias nso="sudo nix-store --optimize"
 
 alias g="lazygit"
 alias grh="git fetch --all && git reset --hard origin/main"
@@ -17,6 +18,8 @@ alias grh="git fetch --all && git reset --hard origin/main"
 alias e="nvim"
 alias et="nvim ."
 alias lsa="ls -Alh"
+alias f=yazi
+alias matrix="cmatrix -C blue"
 
 alias en="cd ~/nixos/ && nvim ."
 alias ed="cd ~/dotfiles/ && nvim ."
