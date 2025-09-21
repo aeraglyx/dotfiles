@@ -19,6 +19,7 @@ require("lazy").setup({
     spec = {
         { import = "plugins" }
     },
+    dev = { fallback = true },
     ui = {
         border = "rounded",
         size = {
