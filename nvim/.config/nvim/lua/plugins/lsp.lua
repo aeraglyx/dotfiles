@@ -1,13 +1,12 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        event = {"BufReadPre", "BufNewFile"},
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "saghen/blink.cmp",
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            local lspconfig = require("lspconfig")
 
             local lua_ls_opts = {
                 settings = {
@@ -23,42 +22,33 @@ return {
                 cmd = { "nixd" },
                 settings = {
                     nixd = {
-                        nixpkgs = {
-                            expr = "import <nixpkgs> {}",
-                        },
-                        -- formatting = {
-                        --     command = { "alejandra" },
-                        -- },
+                        nixpkgs = { expr = "import <nixpkgs> {}" },
+                        -- formatting = { command = { "alejandra" } },
                     }
                 }
             }
 
-            -- local pyright_opts = {
-            --     settings = {
-            --         pyright = {
-            --             -- typeCheckingMode = "standard",  -- standard or off
-            --         },
-            --     }
-            -- }
-
             local basedpyright_opts = {
                 settings = {
                     basedpyright = {
-                        -- logLevel = "error",
-                        typeCheckingMode = "standard",  -- standard or off
-                        -- reportInvalidTypeForm = "none",
+                        -- "off", "basic", "standard", "strict", "recommended", "all"
+                        typeCheckingMode = "standard",
                     },
                 }
             }
 
-            require('lspconfig.ui.windows').default_options.border = "rounded"
+            vim.lsp.config("lua_ls", lua_ls_opts)
+            vim.lsp.config("basedpyright", basedpyright_opts)
+            vim.lsp.config("nixd", nixd_opts)
 
-            -- lspconfig.pyright.setup(pyright_opts)
-            -- lspconfig.nil_ls.setup({})
-            lspconfig.lua_ls.setup(lua_ls_opts)
-            lspconfig.clangd.setup({})
-            lspconfig.basedpyright.setup(basedpyright_opts)
-            lspconfig.nixd.setup(nixd_opts)
+            vim.lsp.enable({
+                "lua_ls",
+                "clangd",
+                "basedpyright",
+                "nixd",
+            })
+
+            -- require('lspconfig.ui.windows').default_options.border = "rounded"
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("attach-lsp-group", { clear = true }),
