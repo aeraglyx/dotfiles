@@ -1,7 +1,7 @@
 @import url("colors.css");
 
 * {
-    font-family: "Caskaydia Cove Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Caskaydia Cove Nerd Font", sans-serif;
     font-weight: 600;
     font-size: 17px;
     min-height: 10px;
@@ -45,8 +45,8 @@ button {
 #custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-time-tracker,
 #custom-screen-recorder,
-#custom-notification,
 #hardware {
     background: @base;
     border: 3px solid @smol;
@@ -112,8 +112,8 @@ button {
 #custom-song,
 #custom-nightlight,
 #custom-vpn,
+#custom-time-tracker,
 #custom-screen-recorder,
-#custom-notification,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -132,10 +132,9 @@ button {
     margin-right: 8px;
 }
 
-/* #pulseaudio, */
-/* #custom-song { */
-/*     color: @green; */
-/* } */
+#custom-time-tracker {
+    color: @green;
+}
 
 #pulseaudio.muted,
 #pulseaudio:not(.normal),

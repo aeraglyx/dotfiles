@@ -17,11 +17,12 @@
     ],
     "modules-right": [
         "custom/screen-recorder",
+        "custom/time-tracker",
+        "custom/vpn",
         "network",
         "pulseaudio",
-        "custom/vpn",
-        "group/hardware",
-        "custom/notification"
+        "group/hardware"
+        // "custom/notification"
         // "mpd",
         // "idle_inhibitor",
         // "tray",
@@ -44,7 +45,7 @@
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
-        // "ignore-workspaces": ["9"]
+        // "ignore-workspaces": ["7", "9"]
     },
     "hyprland/window": {
         "format": "{class} | {title}",
@@ -62,7 +63,7 @@
         "tooltip": false,
         "exec": "python ~/.config/waybar/scripts/song.py",
         "interval": 1,
-        "on-click": "hyprctl dispatch workspace 4"
+        "on-click": "hyprctl dispatch workspace 7"
     },
     "custom/nightlight": {
         "format": " {}",
@@ -79,6 +80,11 @@
         "return-type": "json",
         "interval": 5,
         "on-click": "mullvad-vpn"
+    },
+    "custom/time-tracker": {
+        "format": "{}",
+        "exec": "cat ~/.local/share/time/status | sed 's/.*/\\U&/'",
+        "interval": 2,
     },
     "custom/screen-recorder": {
         "format": " REC",
