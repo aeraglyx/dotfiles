@@ -1,8 +1,9 @@
 menu_src="$(python ~/scripts/bookmarks/menu.py)"
-bookmark=$(echo "$menu_src" | awk 'BEGIN{FS=OFS=" "}{NF--; print}' | rofi -dmenu -i -p "bookmarks" -markup-rows)
+bookmark=$(echo "$menu_src" | rofi -dmenu -i -p "bookmarks" -markup-rows)
 
 if [ -n "$bookmark" ]; then
-    url=$(echo "$menu_src" | awk -v sel="$bookmark" '$0 ~ "^"sel" " {print $NF}')
+    url=$(echo "$bookmark" | awk 'NF>1{print $NF}' )
+    url="${url:21:-7}"
     wl-copy "$url"
     notify-send "Copied to Clipboard" --urgency=low
 fi
