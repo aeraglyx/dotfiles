@@ -27,6 +27,9 @@ vim.opt.signcolumn = "yes:1"
 vim.opt.statuscolumn = "%s%3l  "
 vim.opt.fillchars:append { eob = " " }
 
+vim.opt.list = true
+vim.opt.listchars = "tab:> ,trail:•"
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
@@ -36,16 +39,18 @@ vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 vim.opt.laststatus = 3
--- vim.opt.winborder = "rounded"
+vim.opt.winborder = "rounded"
 
 vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"
 end)
 
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = { current_line = true },
+    -- virtual_lines = { current_line = true },
+    -- underline = { severity = vim.diagnostic.severity.WARN },
+    float = { header = "" },
     signs = false,
-    float = { border = "rounded" },
 })
 
 vim.filetype.add({
@@ -67,8 +72,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Hightlight selection on yank",
     group = vim.api.nvim_create_augroup("highlight_yank", {}),
-    pattern = "*",
+    -- pattern = "*",
     callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 125 })
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 100 })
     end,
 })

@@ -46,6 +46,8 @@ return {
                 "clangd",
                 "basedpyright",
                 "nixd",
+                "bashls",
+                "rust_analyzer",
             })
 
             -- require('lspconfig.ui.windows').default_options.border = "rounded"
