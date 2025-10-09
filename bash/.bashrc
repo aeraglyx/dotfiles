@@ -29,3 +29,8 @@ alias ev="cd ~/dotfiles/nvim/.config/nvim/ && nvim ."
 
 alias ec="cd ~/projects/onyx.nvim/ && nvim ."
 alias kb="cd ~/projects/qmk_userspace/keyboards/grooovebob/dasbob/keymaps/aeraglyx/ && nvim ."
+
+dir() {
+    mkdir -p "$1"
+    cd "$1" || exit
+}
