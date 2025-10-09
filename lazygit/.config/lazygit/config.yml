@@ -3,12 +3,11 @@ disableStartupPopups: true
 gui:
   theme:
     activeBorderColor:
-      - blue
+      - white
       - bold
     # searchingActiveBorderColor:
     inactiveBorderColor:
-      - "#cccccc"
-      # - "#909090"
+      - "#909090"
     optionsTextColor:
       - "#909090"
     selectedLineBgColor:
@@ -28,7 +27,6 @@ gui:
     # markedBaseCommitFgColor:
 
   authorColors:
-    # "*": magenta
     "*": "#909090"
 
   # keybindings:
