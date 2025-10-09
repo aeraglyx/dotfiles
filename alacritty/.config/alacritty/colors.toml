@@ -7,25 +7,25 @@ text = "#222222"
 cursor = "#cccccc"
 
 [colors.normal]
-black = "#282828"
+black = "#525252"
 red = "#fd7eaa"
 green = "#97cbb8"
 yellow = "#deb39c"
 blue = "#96c6dd"
 magenta = "#bcb8e2"
-cyan = "#96c6dd"
+cyan = "#b2c4d0"
 white = "#cccccc"
 
 [colors.bright]
-black = "#282828"
+black = "#888888"
 red = "#fd7eaa"
 green = "#97cbb8"
 yellow = "#deb39c"
 blue = "#96c6dd"
 magenta = "#bcb8e2"
-cyan = "#96c6dd"
-white = "#cccccc"
+cyan = "#b2c4d0"
+white = "#ffffff"
 
 # TODO:
 [colors.dim]
-white = "#909090"
+white = "#888888"

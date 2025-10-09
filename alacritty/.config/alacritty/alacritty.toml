@@ -2,7 +2,7 @@
 import = [ "~/.config/alacritty/colors.toml" ]
 
 [window]
-padding = {x = 14, y = 14}
+padding = {x = 20, y = 20}
 dynamic_padding = true
 
 [font]
