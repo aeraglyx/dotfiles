@@ -20,7 +20,7 @@ window {
 mainbox {
     padding: 0;
     border: 0;
-    spacing: 10px;
+    spacing: 0;
 }
 
 inputbar {
@@ -63,7 +63,7 @@ listview {
     scrollbar: false;
     // spacing: 2px;
     fixed-height: 0;
-    lines: 5;
+    lines: 6;
 }
 
 element {
