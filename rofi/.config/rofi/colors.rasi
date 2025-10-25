@@ -1,9 +1,9 @@
 * {
-    base: #222222;
+    base: #212121;
     smol: #383838;
     dim: #525252;
-    meh: #909090;
-    text: #cccccc;
+    meh: #888888;
+    text: #c8c8c8;
 
     red: #fd7eaa;
     peach: #deb39c;

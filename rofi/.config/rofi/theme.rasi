@@ -9,12 +9,12 @@
 
 window {
     width: 800px;
-    padding: 10;
+    padding: 12;
     background-color: @base;
-    opacity: 0.5;
     border: 3;
-    border-color: @dim;
-    border-radius: 14px;
+    border-color: @meh;
+    border-radius: 20px;
+    // opacity: 0.5;
 }
 
 mainbox {
@@ -51,7 +51,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    text-color: @text;
+    text-color: @blue;
     cursor: text;
     spacing: 0;
     placeholder-color: @dim;
@@ -59,69 +59,43 @@ entry {
 }
 
 listview {
-    // padding:      2px 0px 0px ;
+    // padding: 2px 0px 0px ;
     scrollbar: false;
-    // spacing: 2px;
+    spacing: 4px;
     fixed-height: 0;
     lines: 6;
 }
 
 element {
-    padding: 15px 25px;
+    padding: 14px 20px;
     spacing: 20px;
     cursor: pointer;
     border: 0;
     border-radius: 8px;
     background-color: transparent;
-    // background-color: @base;
     text-color: @text;
 }
 
 element selected {
     background-color: #2a2a2a;
-    // text-color: @blue;
+    border: 3;
+    border-color: @smol;
+    // background-color: @blue;
+    // text-color: @base;
 }
 
-// element normal.normal {
-//     background-color: @normal-background;
-//     text-color:       @normal-foreground;
-// }
 // element normal.urgent {
 //     background-color: @urgent-background;
 //     text-color:       @urgent-foreground;
-// }
-// element normal.active {
-//     background-color: @active-background;
-//     text-color:       @active-foreground;
-// }
-// element selected.normal {
-//     background-color: @selected-normal-background;
-//     text-color:       @selected-normal-foreground;
 // }
 // element selected.urgent {
 //     background-color: @selected-urgent-background;
 //     text-color:       @selected-urgent-foreground;
 // }
-// element selected.active {
-//     background-color: @selected-active-background;
-//     text-color:       @selected-active-foreground;
-// }
-// element alternate.normal {
-//     background-color: @alternate-normal-background;
-//     text-color:       @alternate-normal-foreground;
-// }
-// element alternate.urgent {
-//     background-color: @alternate-urgent-background;
-//     text-color:       @alternate-urgent-foreground;
-// }
-// element alternate.active {
-//     background-color: @alternate-active-background;
-//     text-color:       @alternate-active-foreground;
-// }
 
 element-icon {
     background-color: transparent;
-    size: 1.5em;
+    size: 1.0em;
     cursor: inherit;
     text-color: inherit;
 }
