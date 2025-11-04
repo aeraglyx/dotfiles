@@ -107,6 +107,6 @@ button.active {
 #memory.critical,
 #disk.critical,
 #custom-screen-recorder,
-#custom-vpn:not(.connected) {
+#custom-vpn {
     color: @red;
 }

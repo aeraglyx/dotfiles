@@ -75,9 +75,9 @@
         // "on-click": ""
     },
     "custom/vpn": {
-        "format": " VPN",
-        "exec": "python ~/.config/waybar/scripts/vpn.py",
-        "return-type": "json",
+        "format": " {}",
+        "exec": "echo VPN",
+        "exec-if": "[[ $(mullvad status | head -n 1) != Connected ]]",
         "interval": 5,
         "on-click": "mullvad-vpn"
     },
