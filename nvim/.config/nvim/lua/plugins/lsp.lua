@@ -48,6 +48,7 @@ return {
                 "nixd",
                 "bashls",
                 "rust_analyzer",
+                "cssls",
             })
 
             -- require('lspconfig.ui.windows').default_options.border = "rounded"
