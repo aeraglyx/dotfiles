@@ -32,15 +32,17 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = require("onyx.lualine")
+                    theme = require("onyx.lualine"),
+                    section_separators = "",
+                    component_separators = "",
                 },
                 sections = {
-                    lualine_a = {"mode"},
-                    lualine_b = {"branch", "diagnostics"},
-                    lualine_c = {"filename"},
-                    lualine_x = {"encoding", "fileformat", "filetype"},
-                    lualine_y = {"progress"},
-                    lualine_z = {"location"}
+                    lualine_a = { "mode" },
+                    lualine_b = {},
+                    lualine_c = { { "branch", icon = "" }, "filename", "diagnostics" },
+                    lualine_x = { "encoding", "fileformat", { "filetype", icons_enabled = false } },
+                    lualine_y = { "progress" },
+                    lualine_z = {}
                 },
             })
         end
