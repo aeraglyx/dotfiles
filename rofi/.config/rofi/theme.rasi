@@ -51,7 +51,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    text-color: @blue;
+    text-color: @text;
     cursor: text;
     spacing: 0;
     placeholder-color: @dim;
