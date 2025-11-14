@@ -1,4 +1,12 @@
-action=$(echo -n "weather,time,countdown,translate czech > en,translate english > cz,reboot" | rofi -sep "," -dmenu -p stuff)
+choices="weather
+time
+countdown
+serve website
+translate czech > en
+translate english > cz
+reboot"
+
+action=$(echo -n "$choices" | rofi -sep "\n" -dmenu -p stuff)
 
 case $action in
     "")
@@ -34,6 +42,10 @@ case $action in
         in="$(rofi -dmenu -p "en" -l 0)"
         out=$(trans -brief -s en -t cs "$in")
         notify-send "$out" --urgency=low ;;
+
+    "serve website")
+        zola --root ~/projects/website serve &
+        chromium --app=http://127.0.0.1:1111/ ;;
 
     "weather")
         weather_fmt=$(curl "wttr.in/?format=temp:+%t\nfeel:+%f\nrain:+%p\nwind:+%w")
