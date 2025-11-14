@@ -32,8 +32,8 @@ gui:
   scrollHeight: 3
   nerdFontsVersion: "3"
   showFileIcons: false
+  showBottomLine: false
   # showRootItemInFileTree: false
-  # showBottomLine: false
 
   # keybindings:
   #   universal:
