@@ -1,0 +1,17 @@
+font-family = Caskaydia Cove Nerd Font
+font-size = 14
+
+window-padding-x = 20
+window-padding-y = 20
+
+mouse-hide-while-typing = true
+confirm-close-surface = false
+
+background = #202020
+foreground = #c8c8c8
+
+cursor-color = #c8c8c8
+cursor-text = #202020
+
+selection-background = #96c6dd
+selection-foreground = #202020
