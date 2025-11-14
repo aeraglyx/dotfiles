@@ -1,10 +1,10 @@
 [colors.primary]
 foreground = "#c8c8c8"
-background = "#212121"
+background = "#202020"
 
 [colors.cursor]
-text = "#212121"
-cursor = "#c8c8c8"
+text = "#202020"
+cursor = "#ffffff"
 
 [colors.normal]
 black = "#525252"
