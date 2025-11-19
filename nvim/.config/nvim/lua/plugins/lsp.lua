@@ -11,8 +11,9 @@ return {
             local lua_ls_opts = {
                 settings = {
                     Lua = {
-                        diagnostics = {
-                            globals = { "vim" },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = { vim.env.VIMRUNTIME },
                         }
                     }
                 }
