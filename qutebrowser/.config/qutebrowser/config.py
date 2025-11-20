@@ -112,4 +112,5 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 c.fonts.default_family = 'Caskaydia Cove Nerd Font'
 c.fonts.default_size = '13pt'
 
+config.bind('so', 'config-source')
 # config.bind('M', 'hint links spawn mpv {hint-url}')
