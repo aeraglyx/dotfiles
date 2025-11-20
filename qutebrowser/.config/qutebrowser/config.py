@@ -31,7 +31,7 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/ae
 
 c.tabs.favicons.scale = 1.0
 c.tabs.favicons.show = 'always'
-c.tabs.padding = {'bottom': 4, 'left': 8, 'right': 6, 'top': 4}
+c.tabs.padding = {'bottom': 3, 'left': 8, 'right': 8, 'top': 3}
 c.tabs.position = 'left'
 c.tabs.show = 'multiple'
 c.tabs.min_width = -1
@@ -39,9 +39,9 @@ c.tabs.indicator.width = 3
 c.tabs.pinned.shrink = True
 c.tabs.pinned.frozen = True
 c.tabs.undo_stack_size = 64
-c.tabs.width = 300
+c.tabs.width = 280
 
-c.statusbar.padding = {'bottom': 4, 'left': 8, 'right': 6, 'top': 4}
+c.statusbar.padding = {'bottom': 3, 'left': 8, 'right': 8, 'top': 3}
 
 c.completion.cmd_history_max_items = 64
 c.completion.height = '40%'
