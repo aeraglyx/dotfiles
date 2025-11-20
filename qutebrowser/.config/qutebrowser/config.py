@@ -48,7 +48,8 @@ c.completion.height = '40%'
 
 class colors():
     deep = "#1c1c1c"
-    base = "#212121"
+    base = "#202020"
+    surf = "#292929"
     smol = "#383838"
     dim = "#525252"
     meh = "#888888"
@@ -62,13 +63,13 @@ class colors():
     purp = "#bcb8e2"
     aqua = "#b2c4d0"
 
-c.colors.completion.fg = ['#cccccc', '#cccccc', '#cccccc']
+c.colors.completion.fg = [colors.text, colors.text, colors.text]
 c.colors.completion.odd.bg = colors.base
 c.colors.completion.even.bg = colors.base
 c.colors.completion.category.fg = colors.text
-c.colors.completion.category.bg = colors.smol
-c.colors.completion.category.border.top = colors.smol
-c.colors.completion.category.border.bottom = colors.smol
+c.colors.completion.category.bg = colors.surf
+c.colors.completion.category.border.top = colors.surf
+c.colors.completion.category.border.bottom = colors.surf
 c.colors.completion.item.selected.fg = colors.base
 c.colors.completion.item.selected.bg = colors.blue
 c.colors.completion.item.selected.border.top = colors.base
@@ -77,9 +78,11 @@ c.colors.completion.item.selected.match.fg = 'white'
 c.colors.completion.match.fg = colors.peach
 c.colors.completion.scrollbar.bg = colors.base
 c.colors.completion.scrollbar.fg = colors.dim
+
 c.colors.prompts.border = '1px solid gray'
 c.colors.prompts.bg = '#444444'
-c.colors.statusbar.normal.fg = colors.text
+
+c.colors.statusbar.normal.fg = colors.meh
 c.colors.statusbar.normal.bg = colors.base
 c.colors.statusbar.insert.fg = colors.green
 c.colors.statusbar.insert.bg = colors.base
@@ -88,9 +91,10 @@ c.colors.statusbar.command.bg = colors.base
 c.colors.statusbar.url.fg = colors.text
 c.colors.statusbar.url.error.fg = colors.red
 c.colors.statusbar.url.hover.fg = colors.blue
-c.colors.statusbar.url.success.http.fg = colors.meh
-c.colors.statusbar.url.success.https.fg = colors.meh
+c.colors.statusbar.url.success.http.fg = colors.dim
+c.colors.statusbar.url.success.https.fg = colors.dim
 c.colors.statusbar.url.warn.fg = colors.peach
+
 c.colors.tabs.bar.bg = colors.base
 c.colors.tabs.indicator.start = colors.dim
 c.colors.tabs.indicator.stop = colors.dim
@@ -103,6 +107,16 @@ c.colors.tabs.selected.odd.fg = colors.base
 c.colors.tabs.selected.odd.bg = colors.blue
 c.colors.tabs.selected.even.fg = colors.base
 c.colors.tabs.selected.even.bg = colors.blue
+
+c.colors.messages.info.bg = colors.base
+c.colors.messages.info.fg = colors.text
+c.colors.messages.info.border = colors.base
+c.colors.messages.warning.bg = colors.base
+c.colors.messages.warning.fg = colors.peach
+c.colors.messages.warning.border = colors.base
+c.colors.messages.error.bg = colors.base
+c.colors.messages.error.fg = colors.red
+c.colors.messages.error.border = colors.base
 
 
 c.colors.webpage.preferred_color_scheme = 'dark'
