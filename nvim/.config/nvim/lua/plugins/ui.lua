@@ -14,6 +14,7 @@ return {
                 vim.cmd("Lazy reload indent-blankline.nvim")
                 vim.cmd("Lazy reload nvim-notify")
                 vim.cmd("Lazy reload gitsigns.nvim")
+                vim.cmd("Lazy reload nvim-web-devicons")
                 vim.notify = notify_orig
             end
             vim.keymap.set("n", "<leader>th", reload_onyx, { desc = "Reload [TH]eme" })
@@ -24,6 +25,14 @@ return {
         "norcalli/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup({ "*" }, { names = false })
+        end
+    },
+    {
+        "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("nvim-web-devicons").setup({ color_icons = false })
+            local colors = require("onyx.colors")
+            require("nvim-web-devicons").set_default_icon('', colors.text, 251)
         end
     },
     {
