@@ -1,6 +1,14 @@
 # qute://help/configuring.html
 # qute://help/settings.html
 
+
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    config: Any = None
+    c: Any = None
+
+
 config.load_autoconfig(False)
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
