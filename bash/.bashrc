@@ -1,6 +1,8 @@
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd h bash)"
 
+export HISTCONTROL=ignoredups
+
 alias resh="$SHELL"
 
 flake="--flake ~/nixos#${HOSTNAME}"
