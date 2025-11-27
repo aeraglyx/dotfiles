@@ -9,7 +9,7 @@ day_gamma = 100
 
 transition_mode = "center"      # Select: "geo", "finish_by", "start_at", "center"
 sunset = "23:00:00"             # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
-sunrise = "08:00:00"            # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
+sunrise = "10:00:00"            # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
 transition_duration = 120       # Transition duration in minutes (5-120)
 update_interval = 60            # Update frequency during transitions in seconds (10-300)
 
