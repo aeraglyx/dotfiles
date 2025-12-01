@@ -5,7 +5,7 @@ export HISTCONTROL=ignoredups
 
 alias resh="$SHELL"
 
-flake="--flake ~/nixos#${HOSTNAME}"
+flake="--flake path:/home/aeraglyx/nixos#${HOSTNAME}"
 alias nrs="sudo nixos-rebuild switch $flake"
 alias nrt="sudo nixos-rebuild test $flake"
 alias nrd="sudo nixos-rebuild dry-activate $flake"
