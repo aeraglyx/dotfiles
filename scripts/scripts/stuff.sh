@@ -4,6 +4,7 @@ countdown
 serve website
 translate czech > en
 translate english > cz
+wallpaper
 reboot"
 
 action=$(echo -n "$choices" | rofi -sep "\n" -dmenu -p stuff)
@@ -42,6 +43,9 @@ case $action in
         in="$(rofi -dmenu -p "en" -l 0)"
         out=$(trans -brief -s en -t cs "$in")
         notify-send "$out" --urgency=low ;;
+
+    "wallpaper")
+        sh ~/scripts/wallpaper.sh ;;
 
     "serve website")
         zola --root ~/projects/website serve &
