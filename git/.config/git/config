@@ -1,7 +1,9 @@
 [user]
-	name = aeraglyx
-	email = 48166821+aeraglyx@users.noreply.github.com
+    name = aeraglyx
+    email = 48166821+aeraglyx@users.noreply.github.com
+
 [core]
-	editor = nvim
+    editor = nvim
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
