@@ -93,10 +93,8 @@
         "on-click": "pkill -SIGINT gpu-screen-reco"
     },
     "clock": {
-        // "timezone": "America/New_York",
         "format": "{:%H:%M}",
-        "tooltip-format": "{:%A %d.%m.%Y}",
-        // "format-alt": "{:%d.%m.%Y}"
+        "tooltip-format": "{:%A %Y-%m-%d}",
     },
     "group/hardware": {
         "orientation": "horizontal",
