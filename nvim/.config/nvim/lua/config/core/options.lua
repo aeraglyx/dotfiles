@@ -56,6 +56,7 @@ vim.diagnostic.config({
 vim.filetype.add({
     extension = {
         rasi = "rasi",
+        fuse = "lua",
     },
     pattern = {
         [".*/hypr/.*%.conf"] = "hyprlang",
