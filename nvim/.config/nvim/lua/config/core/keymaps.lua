@@ -55,6 +55,10 @@ keymap.set("n", "<F1>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<F3>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+-- numbers
+keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increment number" })
+keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrement number" })
+
 -- LSP
 keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
 keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
