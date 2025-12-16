@@ -55,6 +55,10 @@ keymap.set("n", "<F1>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<F3>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+-- comments
+keymap.set("v", "m", "mxgc`x", { remap = true, desc = "Comment selection" })
+keymap.set("n", "mm", "mxgcc`x", { remap = true, desc = "Comment line" })
+
 -- numbers
 keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increment number" })
 keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrement number" })
