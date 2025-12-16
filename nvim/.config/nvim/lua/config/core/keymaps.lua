@@ -67,6 +67,17 @@ keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { des
 -- TODO: based on language or find a plugin
 -- keymap.set("n", "<leader>to", "o--TODO: ", { desc = "TODO comment snippet" })
 
+-- lazygit.nvim
+keymap.set("n", "<leader>gg", function()
+    local file = vim.fn.expand("%:t")
+    vim.cmd("LazyGit")
+    vim.defer_fn(function()
+        vim.api.nvim_feedkeys("/" .. file, "t", true)
+        vim.api.nvim_input("<CR>")
+        vim.api.nvim_input("<ESC>")
+    end, 100) -- 40ms threshold on main pc
+end, { desc = "[g]it" })
+
 -- zen mode
 keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Zen Mode" })
 
