@@ -76,8 +76,6 @@ keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
 keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
 keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { desc = "Show diagnostics" })
 
--- TODO: based on language or find a plugin
--- keymap.set("n", "<leader>to", "o--TODO: ", { desc = "TODO comment snippet" })
 
 -- lazygit.nvim
 keymap.set("n", "<leader>gg", function()
@@ -94,4 +92,4 @@ end, { desc = "[g]it" })
 keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Zen Mode" })
 
 -- oil.nvim
-vim.keymap.set("n", "<leader>et", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+keymap.set("n", "<leader>et", "<cmd>Oil<CR>", { desc = "Open parent directory" })
