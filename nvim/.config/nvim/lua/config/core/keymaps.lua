@@ -59,6 +59,14 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("v", "m", "mxgc`x", { remap = true, desc = "Comment selection" })
 keymap.set("n", "mm", "mxgcc`x", { remap = true, desc = "Comment line" })
 
+-- TODO
+keymap.set("n", "mo", "oTODO: <esc>mmA", { remap = true, desc = "Add a T[O]DO comment" })
+keymap.set("n", "me", "oNOTE: <esc>mmA", { remap = true, desc = "Add a NOT[E] comment" })
+keymap.set("n", "mh", "oHACK: <esc>mmA", { remap = true, desc = "Add a [H]ACK comment" })
+keymap.set("n", "ma", "oWARN: <esc>mmA", { remap = true, desc = "Add a W[A]RN comment" })
+keymap.set("n", "mf", "oFIXME: <esc>mmA", { remap = true, desc = "Add a [F]IXME comment" })
+keymap.set("n", "mu", "oBUG: <esc>mmA", { remap = true, desc = "Add a B[U]G comment" })
+
 -- numbers
 keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increment number" })
 keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrement number" })
