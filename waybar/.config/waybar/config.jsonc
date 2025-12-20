@@ -3,8 +3,8 @@
     // "layer": "top",
     // "position": "bottom", // top | bottom | left | right
     // "height": 30,
-    "spacing": 14,
-    "margin": "14 14 0 14",
+    "spacing": 12,
+    "margin": "12 12 0 12",
     "modules-left": [
         "custom/os",
         "hyprland/workspaces",
