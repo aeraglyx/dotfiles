@@ -13,7 +13,7 @@ window {
     background-color: @base;
     border: 3;
     border-color: @dim;
-    border-radius: 18px;
+    border-radius: 10px;
 }
 
 mainbox {
@@ -70,13 +70,13 @@ element {
     spacing: 20px;
     cursor: pointer;
     border: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: transparent;
     text-color: @text;
 }
 
 element selected {
-    background-color: #2a2a2a;
+    background-color: #292929;
     border: 3;
     border-color: @smol;
     // background-color: @blue;
