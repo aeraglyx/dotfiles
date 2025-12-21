@@ -48,8 +48,8 @@ case $action in
         sh ~/scripts/wallpaper.sh ;;
 
     "serve website")
-        zola --root ~/projects/website serve &
-        chromium --app=http://127.0.0.1:1111/ ;;
+        alacritty --command zola --root ~/projects/website serve & disown
+        firefox http://127.0.0.1:1111/ ;;
 
     "weather")
         weather_fmt=$(curl "wttr.in/?format=temp:+%t\nfeel:+%f\nrain:+%p\nwind:+%w")
