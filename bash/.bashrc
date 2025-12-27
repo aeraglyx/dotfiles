@@ -22,6 +22,7 @@ alias et="nvim ."
 alias lsa="ls -Alh"
 alias f=yazi
 alias matrix="cmatrix -C blue"
+alias tre="rg --hidden --files | grep -v '.git/' | tree --fromfile"
 
 alias en="cd ~/nixos/ && nvim ."
 alias ed="cd ~/dotfiles/ && nvim ."
