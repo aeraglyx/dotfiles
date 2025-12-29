@@ -34,8 +34,6 @@ return {
                 extensions_list = { "fzf" },
             })
 
-            -- telescope.load_extension("fzf")
-
             local find_dotfiles = function()
                 builtin.find_files({ cwd = "~/dotfiles" })
             end
@@ -54,7 +52,7 @@ return {
             vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
             vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
             vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-            vim.keymap.set("n", "<leader>sp", builtin.oldfiles, { desc = "[S]earch Recent Files" })
+            vim.keymap.set("n", "<leader>se", builtin.oldfiles, { desc = "[S]earch Recent Files" })
             vim.keymap.set("n", "<leader>sf", builtin.buffers, { desc = "Search existing buffers" })
             vim.keymap.set("n", "<leader>sb", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
             vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
