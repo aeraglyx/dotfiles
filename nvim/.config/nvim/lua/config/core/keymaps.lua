@@ -76,6 +76,10 @@ keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
 keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
 keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { desc = "Show diagnostics" })
 
+-- spell checking
+vim.keymap.set("n", "<leader>sp", function()
+    vim.cmd("setlocal spell!")
+end, { desc = "Toggle spell checking" })
 
 -- lazygit.nvim
 keymap.set("n", "<leader>gg", function()
