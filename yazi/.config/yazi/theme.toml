@@ -1,17 +1,38 @@
 [mgr]
 cwd = { fg = "#525252" }
-hovered = { fg = "#212121", bg = "blue", bold = true }
-preview_hovered = { bg = "#383838" }
 border_style = { fg = "#383838" }
 
+[indicator]
+parent = { fg = "#202020", bg = "blue", bold = true }
+current = { fg = "#202020", bg = "blue", bold = true }
+preview = { bg = "#383838" }
+# padding = { open = "█", close = "█" }
+
+[tabs]
+active = { bg = "blue", fg = "#202020", bold = true }
+inactive = { bg = "#383838", fg = "#c8c8c8" }
+
 [mode]
-normal_main = { fg = "#212121", bg = "blue", bold = true }
+normal_main = { fg = "#202020", bg = "blue", bold = true }
 normal_alt = { fg = "#c8c8c8", bg = "#383838", bold = false }
+select_main = { fg = "#202020", bg = "green", bold = true }
+select_alt = { fg = "#c8c8c8", bg = "#383838", bold = false }
+
+[confirm]
+border = { fg = "#8b8b8b", bold = true }
+title = { fg = "#c8c8c8", bold = true }
+btn_yes = { bg = "blue", fg = "#202020", bold = true }
+
+[spot]
+border = { fg = "#8b8b8b", bold = true }
+title = { fg = "#c8c8c8", bold = true }
+tbl_cell = { bg = "blue", fg = "#202020", bold = true }
+tbl_col = { fg = "#c8c8c8" }
 
 [filetype]
 rules = [
     { mime = "inode/empty", fg = "#525252" },
-    { name = "*", is = "orphan", fg = "red" },
-    { name = "*", fg = "#888888" },
-    { name = "*/", fg = "#c8c8c8" }
+    { url = "*", is = "orphan", fg = "red" },
+    { url = "*", fg = "#8b8b8b" },
+    { url = "*/", fg = "#c8c8c8" }
 ]
