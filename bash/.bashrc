@@ -1,5 +1,6 @@
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd h bash)"
+eval "$(direnv hook bash)"
 
 export HISTCONTROL=ignoredups
 
@@ -16,22 +17,24 @@ alias nso="sudo nix-store --optimize"
 
 alias g="lazygit"
 alias grh="git fetch --all && git reset --hard origin/main"
-
 alias e="nvim"
 alias et="nvim ."
 alias lsa="ls -Alh"
 alias f=yazi
-alias matrix="cmatrix -C blue"
 alias tre="rg --hidden --files | grep -v '.git/' | tree --fromfile"
+alias da="direnv allow"
+alias og="sh ~/scripts/open_github.sh"
+alias qmkc="qmk compile -j $(nproc) --compiledb"
+alias matrix="cmatrix -C cyan"
 
-alias en="cd ~/nixos/ && nvim ."
-alias ed="cd ~/dotfiles/ && nvim ."
+cmd="-c 'Telescope find_files'"
+alias en="cd ~/nixos/ && nvim $cmd ."
+alias ed="cd ~/dotfiles/ && nvim $cmd ."
 alias eb="cd ~/dotfiles/bash/ && nvim .bashrc"
-alias eh="cd ~/dotfiles/hypr/.config/hypr/ && nvim ."
-alias ev="cd ~/dotfiles/nvim/.config/nvim/ && nvim ."
-
-alias ec="cd ~/projects/onyx.nvim/ && nvim ."
-alias kb="cd ~/projects/qmk_userspace/keyboards/grooovebob/dasbob/keymaps/aeraglyx/ && nvim ."
+alias eh="cd ~/dotfiles/hypr/.config/hypr/ && nvim $cmd ."
+alias ev="cd ~/dotfiles/nvim/.config/nvim/ && nvim $cmd ."
+alias ec="cd ~/projects/onyx.nvim/ && nvim $cmd ."
+alias kb="cd ~/projects/qmk_userspace/ && nvim $cmd ."
 
 dir() {
     mkdir -p "$1"
