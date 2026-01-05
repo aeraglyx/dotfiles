@@ -13,6 +13,7 @@ adjust-cell-width = -1
 adjust-box-thickness = 1
 adjust-cursor-thickness = 1
 
-# mouse-scroll-multiplier = 1
 confirm-close-surface = false
 selection-clear-on-typing = true
+resize-overlay = never
+gtk-single-instance = false
