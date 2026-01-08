@@ -55,8 +55,10 @@ vim.diagnostic.config({
 
 vim.filetype.add({
     extension = {
+        sh = "bash",
         rasi = "rasi",
         fuse = "lua",
+        tmTheme = "xml",
     },
     pattern = {
         [".*/hypr/.*%.conf"] = "hyprlang",
