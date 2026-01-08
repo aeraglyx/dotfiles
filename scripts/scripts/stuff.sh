@@ -4,8 +4,7 @@ countdown
 serve website
 translate czech > en
 translate english > cz
-wallpaper
-reboot"
+wallpaper"
 
 action=$(echo -n "$choices" | rofi -sep "\n" -dmenu -p stuff)
 
@@ -13,23 +12,10 @@ case $action in
     "")
         exit 0 ;;
 
-    "reboot")
-        # reboot ;;
-        ;;
     "time")
         sh ~/scripts/time/menu.sh ;;
 
     "countdown")
-        # countdown() {
-        #     start="$(( $(date +%s) + $1 * 60))"
-        #     while [ "$start" -ge "$(date +%s)" ]; do
-        #         ## Is this more than 24h away?
-        #         days="((( $start - $(date +%s) ) * 1 ) / 86400)"
-        #         time="$start - $(date +%s)"
-        #         printf '%s day(s) and %s\r' "$days" "$(date -u -d "@$time" +%H:%M:%S)"
-        #         sleep 1.0
-        #     done
-        # }
         time_minutes="$(rofi -dmenu -p "minutes" -l 0)"
         sleep $((time_minutes * 60))
         notify-send "it's time, bro" --urgency=critical ;;
@@ -46,10 +32,6 @@ case $action in
 
     "wallpaper")
         sh ~/scripts/wallpaper.sh ;;
-
-    "serve website")
-        alacritty --command zola --root ~/projects/website serve & disown
-        firefox http://127.0.0.1:1111/ ;;
 
     "weather")
         weather_fmt=$(curl "wttr.in/?format=temp:+%t\nfeel:+%f\nrain:+%p\nwind:+%w")
