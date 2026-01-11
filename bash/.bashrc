@@ -14,6 +14,7 @@ alias nfu="sudo nix flake update --flake ~/nixos"
 alias ncg="sudo nix-collect-garbage"
 alias ntr="nix-tree /home/aeraglyx/nixos#nixosConfigurations.${HOSTNAME}.config.system.build.toplevel"
 alias nso="sudo nix-store --optimize"
+alias nsp="nix-shell -p"
 
 alias g="lazygit"
 alias grh="git fetch --all && git reset --hard origin/main"
