@@ -9,16 +9,16 @@ gui:
       - "#c8c8c8"
       - bold
     inactiveBorderColor:
-      - "#888888"
+      - "#8b8b8b"
     searchingActiveBorderColor:
       - "#deb39c"
       - bold
     optionsTextColor:
       - "#525252"
     selectedLineBgColor:
-      - "#383838"
+      - "#363636"
     inactiveViewSelectedLineBgColor:
-      - "#383838"
+      - "#363636"
     # cherryPickedCommitBgColor:
     #   - "#45475a"
     # cherryPickedCommitFgColor:
@@ -27,7 +27,7 @@ gui:
     #   - red
 
   authorColors:
-    "*": "#888888"
+    "*": "#8b8b8b"
 
   scrollHeight: 3
   nerdFontsVersion: "3"
