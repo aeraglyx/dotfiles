@@ -12,6 +12,8 @@ adjust-cell-height = 1
 adjust-cell-width = -1
 adjust-box-thickness = 1
 adjust-cursor-thickness = 1
+adjust-underline-thickness = 1
+adjust-underline-position = 1
 
 confirm-close-surface = false
 selection-clear-on-typing = true

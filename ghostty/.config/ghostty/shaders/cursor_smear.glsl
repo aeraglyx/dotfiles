@@ -67,7 +67,7 @@ vec4 saturate(vec4 color, float factor) {
     return mix(vec4(gray), color, factor);
 }
 
-const float DURATION = 0.075;
+const float DURATION = 0.05;
 const float OPACITY = 0.25;
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
