@@ -47,11 +47,11 @@ return {
                 },
                 sections = {
                     lualine_a = { "mode" },
-                    lualine_b = {},
+                    lualine_b = { },
                     lualine_c = { { "branch", icon = "" }, "filename", "diagnostics" },
                     lualine_x = { "encoding", "fileformat", { "filetype", icons_enabled = false } },
-                    lualine_y = { "progress" },
-                    lualine_z = {}
+                    lualine_y = { },
+                    lualine_z = { "progress" }
                 },
             })
         end
