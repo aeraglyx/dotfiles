@@ -1,5 +1,5 @@
 [mgr]
-cwd = { fg = "#525252" }
+cwd = { fg = "#8b8b8b" }
 border_style = { fg = "#363636" }
 find_keyword = { fg = "green", bg = "#363636", bold = true }
 find_position = { fg = "#202020", bg = "blue", bold = true }
