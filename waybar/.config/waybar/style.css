@@ -23,15 +23,16 @@ window#waybar {
 
 #workspaces,
 #custom-song,
-.modules-center > *,
+#window,
 .modules-center > *,
 .modules-right > * {
     background: @base;
-    border: 3px solid @smol;
+    border: 2px solid @smol;
     border-radius: 10px;
 }
 
 #custom-song,
+#window,
 .modules-center > * > *,
 .modules-right > * > * {
     padding: 3px 12px 2px;
@@ -45,7 +46,7 @@ window#waybar {
 
 tooltip {
     background: @base;
-    border: 3px solid @smol;
+    border: 2px solid @smol;
     border-radius: 10px;
 }
 tooltip label {
