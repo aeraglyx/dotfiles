@@ -56,6 +56,7 @@ vim.diagnostic.config({
 vim.filetype.add({
     extension = {
         sh = "bash",
+        jsonc = "json",
         rasi = "rasi",
         fuse = "lua",
         tmTheme = "xml",
