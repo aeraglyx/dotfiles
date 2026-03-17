@@ -11,8 +11,8 @@ window {
     width: 800px;
     padding: 12;
     background-color: @base;
-    border: 3;
-    border-color: @dim;
+    border: 2;
+    border-color: @meh;
     border-radius: 10px;
 }
 
@@ -77,7 +77,7 @@ element {
 
 element selected {
     background-color: #292929;
-    border: 3;
+    border: 2;
     border-color: @smol;
     // background-color: @blue;
     // text-color: @base;
