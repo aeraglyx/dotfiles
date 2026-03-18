@@ -21,9 +21,7 @@ window#waybar {
     background: none;
 }
 
-#workspaces,
-#custom-song,
-#window,
+.modules-left > *:not(:first-child),
 .modules-center > *,
 .modules-right > * {
     background: @base;
@@ -33,13 +31,14 @@ window#waybar {
 
 #custom-song,
 #window,
+#mpris,
 .modules-center > * > *,
 .modules-right > * > * {
     padding: 3px 12px 2px;
     color: inherit;
 }
 
-.modules-center > * > * > *:not(:last-child) > *,
+/* group spacing */
 .modules-right > * > * > *:not(:last-child) > * {
     margin-right: 18;
 }
@@ -54,14 +53,12 @@ tooltip label {
 }
 
 button {
-    /* box-shadow: inset 0 -3px transparent; */
-    /* background-color: @base; */
     background: transparent;
     color: @text;
     padding: 0 8px;
-    margin: 4px;
+    margin: 5px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     transition: none;
     padding-top: 1px;
 }
@@ -97,6 +94,10 @@ button.active {
 
 #custom-time-tracker {
     color: @green;
+}
+
+#mpris.paused {
+    color: @dim;
 }
 
 #pulseaudio.muted,
