@@ -7,7 +7,8 @@
     "margin": "12 12 0 12",
     "modules-left": [
         "custom/os",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "mpris"
         // "hyprland/windowcount"
         // "hyprland/window"
         // "custom/song"
@@ -61,6 +62,19 @@
         "exec": "python ~/.config/waybar/scripts/song.py",
         "interval": 1,
         "on-click": "hyprctl dispatch workspace 7"
+    },
+    "mpris": {
+        "format": "{player_icon} {artist} | {title}",
+        "format-paused": "{player_icon} PAUSED",
+        "format-stopped": "{player_icon} STOPPED",
+        "artist-len": 18,
+        "title-len": 36,
+        "ellipsis": "...",
+        "player-icons": {
+            "default": " ",
+            "firefox": " ",
+            "spotify": " "
+        }
     },
     "custom/nightlight": {
         "format": " {}",
