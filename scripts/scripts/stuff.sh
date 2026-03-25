@@ -1,7 +1,7 @@
 choices="weather
 time
+calculate
 countdown
-serve website
 translate czech > en
 translate english > cz
 wallpaper"
@@ -14,6 +14,9 @@ case $action in
 
     "time")
         sh ~/scripts/time/menu.sh ;;
+
+    "calculate")
+        sh ~/scripts/calc.sh ;;
 
     "countdown")
         time_minutes="$(rofi -dmenu -p "minutes" -l 0)"
