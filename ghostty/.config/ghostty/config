@@ -19,3 +19,4 @@ confirm-close-surface = false
 selection-clear-on-typing = true
 resize-overlay = never
 gtk-single-instance = false
+scrollbar = never
