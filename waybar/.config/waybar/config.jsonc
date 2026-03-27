@@ -172,8 +172,7 @@
             "default": ["", "", ""]
         },
         "states": {
-            // "warning-high": 50,
-            "normal": 45,
+            "normal": 35,
             "critical": 5
         },
         "on-click": "pavucontrol"
