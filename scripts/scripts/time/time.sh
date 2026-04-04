@@ -22,8 +22,14 @@ if [[ ! -s $status_file ]]; then
 
     echo -n "$(date --iso-8601=s)" >> "$data_file"
     echo "$type" > "$status_file"
+
+    notify-send " $type started" --urgency=low
 else
-    data_file=$time_dir/data/$(cat "$status_file")
+    type=$(cat "$status_file")
+    data_file=$time_dir/data/$type
+
     echo "/$(date --iso-8601=s)" >> "$data_file"
     echo -n > "$status_file"
+
+    notify-send " $type stopped" --urgency=low
 fi
