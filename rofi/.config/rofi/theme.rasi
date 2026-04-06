@@ -1,7 +1,7 @@
 @import "colors"
 
 * {
-    font: "Caskaydia Cove Nerd Font SemiBold 14";
+    font: "Caskaydia Mono Nerd Font SemiBold 14";
     background-color: transparent;
     text-color: @text;
     highlight: none;
@@ -32,8 +32,7 @@ inputbar {
         "entry",
         "num-filtered-rows",
         "textbox-num-sep",
-        "num-rows",
-        "case-indicator"
+        "num-rows"
     ];
 }
 
@@ -122,12 +121,10 @@ scrollbar {
     handle-width: 8px;
     border: 0;
     handle-color: @text;
-    // border-radius: 2px;
 }
 
 sidebar {
     border-color: @text;
-    // border-radius: 8px;
 }
 
 button {
