@@ -93,7 +93,7 @@
         "on-click": "mullvad-vpn"
     },
     "custom/time-tracker": {
-        "format": "{}",
+        "format": "󱎫 {}",
         "exec": "cat ~/.local/share/time/status | sed 's/.*/\\U&/'",
         "interval": 2
     },
