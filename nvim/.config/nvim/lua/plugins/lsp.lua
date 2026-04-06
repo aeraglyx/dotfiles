@@ -57,14 +57,14 @@ return {
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("attach-lsp-group", { clear = true }),
-                callback = function(event)
+                callback = function(args)
 
-                    local client = vim.lsp.get_client_by_id(event.data.client_id)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
                     client.server_capabilities.semanticTokensProvider = nil
 
                     local map = function(keys, func, desc, mode)
                         mode = mode or "n"
-                        vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+                        vim.keymap.set(mode, keys, func, { buffer = args.buf, desc = "LSP: " .. desc })
                     end
 
                     map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
