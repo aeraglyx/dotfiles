@@ -9,16 +9,16 @@ gui:
       - "#c8c8c8"
       - bold
     inactiveBorderColor:
-      - "#8b8b8b"
+      - "#525252"
     searchingActiveBorderColor:
-      - "#deb39c"
+      - green
       - bold
     optionsTextColor:
       - "#525252"
     selectedLineBgColor:
-      - "#363636"
+      - "#383838"
     inactiveViewSelectedLineBgColor:
-      - "#363636"
+      - "#383838"
     # cherryPickedCommitBgColor:
     #   - "#45475a"
     # cherryPickedCommitFgColor:
@@ -29,12 +29,8 @@ gui:
   authorColors:
     "*": "#8b8b8b"
 
-  scrollHeight: 3
+  scrollHeight: 1
   nerdFontsVersion: "3"
   showFileIcons: false
   showBottomLine: false
-  # showRootItemInFileTree: false
-
-  # keybindings:
-  #   universal:
-  #     quit: <esc>
+  showRootItemInFileTree: false
