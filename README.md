@@ -10,7 +10,7 @@ Requires git and stow.
 ```bash
 git clone git@github.com:aeraglyx/dotfiles
 cd ~/dotfiles
-stow *
+stow */
 ```
 
 
