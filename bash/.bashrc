@@ -3,6 +3,7 @@ eval "$(zoxide init --cmd h bash)"
 eval "$(direnv hook bash)"
 
 export HISTCONTROL=ignoredups
+export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/config
 
 alias resh="$SHELL"
 
