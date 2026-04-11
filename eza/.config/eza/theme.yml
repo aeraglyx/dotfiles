@@ -96,10 +96,10 @@ header: {foreground: Default, is_underline: true}
 octal: {foreground: Purple}
 flags: {foreground: Default}
 
-symlink_path: {foreground: Cyan}
+symlink_path: {foreground: DarkGray}
 control_char: {foreground: Red}
 broken_symlink: {foreground: Red}
-broken_path_overlay: {foreground: Default, is_underline: true}
+broken_path_overlay: {foreground: Red, is_underline: false}
 
 filenames:
 # Custom filename-based overrides
