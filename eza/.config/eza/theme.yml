@@ -54,10 +54,10 @@ links:
   multi_link_file: {foreground: Red, background: Yellow}
 
 git:
-  new: {foreground: Green}
+  new: {foreground: Blue}
   modified: {foreground: Blue}
   deleted: {foreground: Red}
-  renamed: {foreground: Yellow}
+  renamed: {foreground: Blue}
   typechange: {foreground: Purple}
   ignored: {foreground: Default, is_dimmed: true}
   conflicted: {foreground: Red}
@@ -85,8 +85,8 @@ file_type:
   compressed: {foreground: Yellow}
   temp: {foreground: White}
   compiled: {foreground: Yellow}
-  build: {foreground: Purple, is_bold: true, is_underline: false}
-  source: {foreground: Purple, is_bold: true}
+  build: {foreground: Default, is_bold: false, is_underline: false}
+  source: {foreground: Default, is_bold: false}
 
 punctuation: {foreground: Black, is_bold: true}
 date: {foreground: DarkGray}
