@@ -9,3 +9,4 @@ dynamic_padding = true
 size = 14.0
 normal = { family = "Caskaydia Cove Nerd Font" }
 builtin_box_drawing = false
+offset = {x = -1, y = 1}
