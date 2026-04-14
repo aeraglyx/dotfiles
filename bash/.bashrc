@@ -4,6 +4,8 @@ eval "$(direnv hook bash)"
 
 export HISTCONTROL=ignoredups
 export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/config
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+# export STARSHIP_CONFIG="$XDG_CONFIG_HOME"/starship/config.toml
 
 alias resh="$SHELL"
 
