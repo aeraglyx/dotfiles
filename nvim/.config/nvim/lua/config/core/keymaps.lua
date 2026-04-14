@@ -79,6 +79,7 @@ keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { des
 -- miscellaneous
 keymap.set("n", "gl", "gx", { remap = true, desc = "[G]o to [L]ink" })
 keymap.set("n", "fm", "mx:%s/\r$<CR>`x", { remap = true, desc = "Remove ^M" })
+keymap.set("n", " ", "<nop>", { desc = "Ignore space", silent = true })
 
 -- spell checking
 vim.keymap.set("n", "<leader>sp", function()
