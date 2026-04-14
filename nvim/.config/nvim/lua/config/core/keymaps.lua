@@ -72,8 +72,7 @@ keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increment number" })
 keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrement number" })
 
 -- LSP
-keymap.set("n", "lo", "<cmd>LspStop<CR>", { desc = "LSP stop" })
-keymap.set("n", "la", "<cmd>LspStart<CR>", { desc = "LSP start" })
+keymap.set("n", "l", "gr", { remap = true, desc = "LSP stuff" })
 keymap.set("n", "<leader>er", "<cmd>lua vim.diagnostic.open_float(0)<CR>", { desc = "Show diagnostics" })
 
 -- miscellaneous
