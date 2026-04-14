@@ -15,12 +15,11 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 
--- vim.opt.spell = true
-
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.cursorline = true
 vim.opt.scrolloff = 4
+vim.opt.mousescroll = "ver:1,hor:1"
 
 vim.opt.inccommand = "split"
 vim.opt.signcolumn = "yes:1"
