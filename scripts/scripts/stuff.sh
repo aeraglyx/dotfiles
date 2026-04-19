@@ -6,6 +6,7 @@ color picker
 calendar
 cz to en
 en to cz
+ocr
 wallpaper"
 
 action=$(echo -n "$choices" | rofi -sep "\n" -dmenu -p stuff -sort)
@@ -43,6 +44,10 @@ case $action in
 
     "wallpaper")
         sh ~/scripts/wallpaper.sh ;;
+
+    "ocr")
+        region="$(slurp -c "#8b8b8b" -b "#14141488")"
+        grim -g "$region" - | tesseract - - | awk '{$1=$1};1' | wl-copy ;;
 
     "weather")
         weather_fmt=$(curl "wttr.in/?format=temp:+%t\nfeel:+%f\nrain:+%p\nwind:+%w")
