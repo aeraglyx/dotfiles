@@ -1,11 +1,11 @@
 choices="weather
-time
+time / report
 calculate
 countdown
 color picker
 calendar
-cz to en
-en to cz
+translate / cz to en
+translate / en to cz
 ocr
 wallpaper"
 
@@ -15,7 +15,7 @@ case $action in
     "")
         exit 0 ;;
 
-    "time")
+    "time / report")
         sh ~/scripts/time/menu.sh ;;
 
     "calculate")
@@ -32,12 +32,12 @@ case $action in
     "calendar")
         ghostty --class=popup.app.high -e bash -c "python ~/projects/calendar/list.py; exec bash" ;;
 
-    "translate czech > en")
+    "translate / cz to en")
         in="$(rofi -dmenu -p "cz" -l 0)"
         out=$(trans -brief -s cs -t en "$in")
         notify-send "$out" --urgency=low ;;
 
-    "translate english > cz")
+    "translate / en to cz")
         in="$(rofi -dmenu -p "en" -l 0)"
         out=$(trans -brief -s en -t cs "$in")
         notify-send "$out" --urgency=low ;;
