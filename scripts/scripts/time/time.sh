@@ -7,29 +7,29 @@ if [ ! -d "$time_dir" ]; then
 fi
 
 if [[ ! -s $status_file ]]; then
-    type=$(
+    project=$(
         find "$time_dir/data" -mindepth 1 -printf "%T@_%P\n" |
         sort -nr |
         cut -d'_' -f2- |
         rofi -sep "\n" -dmenu -p "project"
     ) || exit 0
 
-    data_file=$time_dir/data/$type
+    data_file=$time_dir/data/$project
 
     if [ ! -f "$data_file" ]; then
         touch "$data_file"
     fi
 
     echo -n "$(date --iso-8601=s)" >> "$data_file"
-    echo "$type" > "$status_file"
+    echo "$project" > "$status_file"
 
-    notify-send " $type started" --urgency=low
+    notify-send " $project started" --urgency=low
 else
-    type=$(cat "$status_file")
-    data_file=$time_dir/data/$type
+    project=$(cat "$status_file")
+    data_file=$time_dir/data/$project
 
     echo "/$(date --iso-8601=s)" >> "$data_file"
     echo -n > "$status_file"
 
-    notify-send " $type stopped" --urgency=low
+    notify-send " $project stopped" --urgency=low
 fi
